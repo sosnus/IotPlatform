@@ -2,8 +2,6 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 namespace InputBasic
 {
     /// <summary>
@@ -25,7 +23,7 @@ namespace InputBasic
         {
             var gpio = GpioController.GetDefault();
             mySwitch = gpio.OpenPin(numer_pinu); //initialization
-            mySwitch.SetDriveMode(GpioPinDriveMode.InputPullUp); //Set directory (input/output)
+            mySwitch.SetDriveMode(GpioPinDriveMode.InputPullUp); //Set directory as input with pullup resistor
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,7 +36,6 @@ namespace InputBasic
             {
                 tblInfo.Text = $"HIGH state on pin {numer_pinu}";
             }
-
         }
     }
 }
