@@ -11,12 +11,12 @@ namespace Pwm
         private PwmPin _pwmPin;
         private PwmController _pwmController;
 
-        const double frequency = 50;
         double width = 0;
+        double frequency = 100; //init value
 
         public Pwm() { }
 
-        public async void Setup(int _pinNumber)
+        public async void Setup(int _pinNumber, double _frequency)
         {
             var gpioController = GpioController.GetDefault();
             var pwmManager = new PwmProviderManager();
@@ -24,17 +24,18 @@ namespace Pwm
 
             var pwmControllers = await pwmManager.GetControllersAsync();
 
-            //use the first available PWM controller an set refresh rate (Hz)
-            _pwmController = pwmControllers[0]; //wut?
+            _pwmController = pwmControllers[0];
+            frequency = _frequency; //TODO: get; set;
             _pwmController.SetDesiredFrequency(frequency);
 
             _pwmPin = _pwmController.OpenPin(_pinNumber);
             _pwmPin.Start();
         }
 
-        public void SetPosition(double _position)
+        public void SetPosition(double _width)
         {
-            _pwmPin.SetActiveDutyCyclePercentage(width); //temporary between <0-1>
+            width = _width; //TODO: get; set;
+            _pwmPin.SetActiveDutyCyclePercentage(width); //between <0-1>
         }
 
     }
