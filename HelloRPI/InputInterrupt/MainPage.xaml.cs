@@ -38,6 +38,22 @@ namespace InputInterrupt
             var gpio = GpioController.GetDefault();
             mySwitch = gpio.OpenPin(numer_pinu); //initialization
             mySwitch.SetDriveMode(GpioPinDriveMode.InputPullUp); //Set directory (input/output)
+            mySwitch.ValueChanged += MySwitch_ValueChanged;
+        }
+
+        private void MySwitch_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
+        {
+            var t = Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                if (args.Edge == GpioPinEdge.FallingEdge)
+                {
+                    tblInfo.Text = $"LOW state on pin {numer_pinu}";
+                }
+                else
+                {
+                    tblInfo.Text = $"HIGH state on pin {numer_pinu}";
+                }
+            });
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -50,7 +66,6 @@ namespace InputInterrupt
             {
                 tblInfo.Text = $"HIGH state on pin {numer_pinu}";
             }
-
         }
     }
 }
