@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputBasic", "InputBasic\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pwm", "Pwm\Pwm.csproj", "{7005ABEF-F866-4FE5-9427-CD4F4788D3A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputInterrupt", "InputInterrupt\InputInterrupt.csproj", "{4695B562-B6AE-4578-9326-5B118E446C23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -93,6 +95,24 @@ Global
 		{7005ABEF-F866-4FE5-9427-CD4F4788D3A1}.Release|x86.ActiveCfg = Release|x86
 		{7005ABEF-F866-4FE5-9427-CD4F4788D3A1}.Release|x86.Build.0 = Release|x86
 		{7005ABEF-F866-4FE5-9427-CD4F4788D3A1}.Release|x86.Deploy.0 = Release|x86
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Debug|ARM.ActiveCfg = Debug|ARM
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Debug|ARM.Build.0 = Debug|ARM
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Debug|ARM.Deploy.0 = Debug|ARM
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Debug|x64.ActiveCfg = Debug|x64
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Debug|x64.Build.0 = Debug|x64
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Debug|x64.Deploy.0 = Debug|x64
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Debug|x86.ActiveCfg = Debug|x86
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Debug|x86.Build.0 = Debug|x86
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Debug|x86.Deploy.0 = Debug|x86
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Release|ARM.ActiveCfg = Release|ARM
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Release|ARM.Build.0 = Release|ARM
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Release|ARM.Deploy.0 = Release|ARM
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Release|x64.ActiveCfg = Release|x64
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Release|x64.Build.0 = Release|x64
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Release|x64.Deploy.0 = Release|x64
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Release|x86.ActiveCfg = Release|x86
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Release|x86.Build.0 = Release|x86
+		{4695B562-B6AE-4578-9326-5B118E446C23}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

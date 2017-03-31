@@ -1,8 +1,22 @@
-﻿using Windows.Devices.Gpio;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Gpio;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
 
-namespace InputBasic
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+
+namespace InputInterrupt
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -10,7 +24,7 @@ namespace InputBasic
     public sealed partial class MainPage : Page
     {
         private const int numer_pinu = 4; //number of pin where we plug switch
-        //one switch pin is still connected to ground
+                                           //one switch pin is still connected to ground
         private GpioPin mySwitch;
 
         public MainPage()
@@ -23,7 +37,7 @@ namespace InputBasic
         {
             var gpio = GpioController.GetDefault();
             mySwitch = gpio.OpenPin(numer_pinu); //initialization
-            mySwitch.SetDriveMode(GpioPinDriveMode.InputPullUp); //Set directory as input with pullup resistor
+            mySwitch.SetDriveMode(GpioPinDriveMode.InputPullUp); //Set directory (input/output)
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,6 +50,7 @@ namespace InputBasic
             {
                 tblInfo.Text = $"HIGH state on pin {numer_pinu}";
             }
+
         }
     }
 }
