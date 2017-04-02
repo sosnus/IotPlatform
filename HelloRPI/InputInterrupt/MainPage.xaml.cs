@@ -23,7 +23,7 @@ namespace InputInterrupt
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private const int numer_pinu = 4; //number of pin where we plug switch
+        private const int numer_pinu = 22; //number of pin where we plug switch
                                            //one switch pin is still connected to ground
         private GpioPin mySwitch;
 
