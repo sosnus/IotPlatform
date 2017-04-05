@@ -44,6 +44,11 @@ namespace SosnusIotLib
             }
         }
 
+        public double FrequencyToMiliseconds(double _frequency)
+        {
+            return 1.0 / _frequency;
+        }
+
         /// <summary>
         /// This constructor is void, You must configure this class by this.SetupBasic()
         /// </summary>
