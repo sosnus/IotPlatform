@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blink", "Blink\Blink.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputBasic", "InputBasic\InputBasic.csproj", "{7C5F4EF1-5A14-4D57-AB45-9A2D9BBDFBCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pwm", "Pwm\Pwm.csproj", "{7005ABEF-F866-4FE5-9427-CD4F4788D3A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwmBasicTest", "Pwm\PwmBasicTest.csproj", "{7005ABEF-F866-4FE5-9427-CD4F4788D3A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputInterrupt", "InputInterrupt\InputInterrupt.csproj", "{4695B562-B6AE-4578-9326-5B118E446C23}"
 EndProject

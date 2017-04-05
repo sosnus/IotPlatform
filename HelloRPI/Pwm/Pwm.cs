@@ -5,7 +5,7 @@ using Windows.Devices.Pwm;
 using Microsoft.IoT.DeviceCore.Pwm;
 using Microsoft.IoT.Devices.Pwm;
 
-namespace Pwm
+namespace PwmBasicTest
 {
     class Pwm
     {
