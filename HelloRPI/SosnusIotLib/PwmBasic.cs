@@ -4,6 +4,7 @@ using Windows.Devices.Pwm;
 //If You have error in near line, maybe You forgot about NuGet package?
 using Microsoft.IoT.DeviceCore.Pwm;
 using Microsoft.IoT.Devices.Pwm;
+using System.Threading.Tasks;
 
 namespace SosnusIotLib
 {
@@ -26,18 +27,19 @@ namespace SosnusIotLib
             }
         }
 
-        private double width = 100; //init value
-        public double Width
+        private double fill = 0; //init value between <0-100>
+        //between 0.0-100.0
+        public double Fill
         {
             get
             {
-                return width;
+                return fill*100.0; //between 0.0-100.0
             }
             set
             {
                 //value must be between 
-                width = value;
-                _pwmPin.SetActiveDutyCyclePercentage(width); //between <0-1>
+                fill = (value/100);
+                _pwmPin.SetActiveDutyCyclePercentage(fill/100.0); //between <0-1>
 
             }
         }
@@ -47,7 +49,8 @@ namespace SosnusIotLib
         /// </summary>
         public PwmBasic() { }
 
-        public async void SetupBasic(int _pinNumber, double _frequency)
+        public async 
+        Task SetupBasic(int _pinNumber, double _frequency)
         {
             var gpioController = GpioController.GetDefault();
             var pwmManager = new PwmProviderManager();
@@ -56,10 +59,31 @@ namespace SosnusIotLib
             var pwmControllers = await pwmManager.GetControllersAsync();
 
             _pwmController = pwmControllers[0];
-            frequency = _frequency; //TODO: get; set;
+            Frequency = _frequency;
             _pwmController.SetDesiredFrequency(frequency);
 
             _pwmPin = _pwmController.OpenPin(_pinNumber);
+            _pwmPin.Start();
+        }
+
+        /// <summary>
+        /// Set fill of PWM
+        /// </summary>
+        /// <param name="_fill">must be between 0.0 to 100.0</param>
+        public void Set(double _fill)
+        {
+            Fill = _fill;
+        }
+
+
+
+        public void Stop()
+        {
+            _pwmPin.Stop();
+        }
+
+        public void Start()
+        {
             _pwmPin.Start();
         }
     }
