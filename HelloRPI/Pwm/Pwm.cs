@@ -1,6 +1,7 @@
 ﻿using System;
 using Windows.Devices.Gpio;
 using Windows.Devices.Pwm;
+//If You have error in near line, maybe You forgot about NuGet package?
 using Microsoft.IoT.DeviceCore.Pwm;
 using Microsoft.IoT.Devices.Pwm;
 
