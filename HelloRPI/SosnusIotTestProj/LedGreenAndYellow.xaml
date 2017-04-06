@@ -9,12 +9,12 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Green ON" Click="Button_Click"/>
-            <Button Content="Green OFF" Click="Button_Click"/>
-            <Button Content="Green TOG" Click="Button_Click"/>
-            <Button Content="Yellow ON" Click="Button_Click"/>
-            <Button Content="Yellow OFF" Click="Button_Click"/>
-            <Button Content="Yellow TOG" Click="Button_Click"/>
+            <Button Name="GON" Margin="5" Width="100"  Content="Green ON" Click="Button_Click"/>
+            <Button Name="GOF" Margin="5" Width="100" Content="Green OFF" Click="Button_Click"/>
+            <Button Name="GTG" Margin="5" Width="100" Content="Green TOG" Click="Button_Click"/>
+            <Button Name="YON" Margin="5" Width="100" Content="Yellow ON" Click="Button_Click"/>
+            <Button Name="YOF" Margin="5" Width="100" Content="Yellow OFF" Click="Button_Click"/>
+            <Button Name="YTG" Margin="5" Width="100"  Content="Yellow TOG" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Page>

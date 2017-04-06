@@ -95,8 +95,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BuzzerPage.xaml.cs">
+      <DependentUpon>BuzzerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Info.xaml.cs">
       <DependentUpon>Info.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InterruptPage.xaml.cs">
+      <DependentUpon>InterruptPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="LedGreenAndYellow.xaml.cs">
       <DependentUpon>LedGreenAndYellow.xaml</DependentUpon>
@@ -111,8 +117,8 @@
     <Compile Include="ServoPage.xaml.cs">
       <DependentUpon>ServoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ServoPwm.xaml.cs">
-      <DependentUpon>ServoPwm.xaml</DependentUpon>
+    <Compile Include="SwitchPage.xaml.cs">
+      <DependentUpon>SwitchPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -136,7 +142,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="BuzzerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InterruptPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,7 +170,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ServoPwm.xaml">
+    <Page Include="SwitchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
