@@ -29,6 +29,9 @@ namespace SosnusIotLib
 
         private double fill = 0; //init value between <0-100>
         //between 0.0-100.0
+        /// <summary>
+        /// Fill get and set between 0.0 to 100.0 (mean 0% to 100%)
+        /// </summary>
         public double Fill
         {
             get
@@ -39,14 +42,15 @@ namespace SosnusIotLib
             {
                 //value must be between 
                 fill = (value/100);
-                _pwmPin.SetActiveDutyCyclePercentage(fill/100.0); //between <0-1>
+                _pwmPin.SetActiveDutyCyclePercentage(fill); //between <0-1>
 
             }
         }
 
         public double FrequencyToMiliseconds(double _frequency)
         {
-            return 1.0 / _frequency;
+            //1.0 / _frequency; //now seconds
+            return 1000.0 / _frequency; //now ms, for f=50, maybe return 20 (ms)
         }
 
         /// <summary>

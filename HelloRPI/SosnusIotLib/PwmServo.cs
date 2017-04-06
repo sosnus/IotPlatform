@@ -62,7 +62,8 @@ namespace SosnusIotLib
                     {
                         fillTemp = (variable * fillDelta) / 100;
                         fillTemp += fillMin; //now we have how many ms must be filling
-                        fillTemp = fillTemp/ FrequencyToMiliseconds(Frequency);
+                        fillTemp = (fillTemp*100)/ FrequencyToMiliseconds(Frequency);
+                        // FreqToMs give 20?
                        // fillTemp *= 100;
                     }
                     break;

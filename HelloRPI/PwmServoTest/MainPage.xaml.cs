@@ -37,24 +37,12 @@ namespace PwmServoTest
             servo.SetupServo(22);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //double tempVar = Convert.ToDouble(sSlider.Value);
-            //while (tempVar > 100.0) tempVar /= 10.0;
-            //servo.Set(tempVar, PwmServo.PwmInputType.ServoFill);
-            //tblValue.Text = $"You set {tempVar}% fill on pwm";
-            tblValue.Text = $"NOTHING";
-        }
-
         private void sSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
         {
             double tempVar = Convert.ToDouble(e.NewValue);
             while (tempVar > 100.0) tempVar /= 10.0;
             servo.Set(tempVar, PwmServo.PwmInputType.ServoFill);
-            tblValue.Text = $"You set {servo.Fill *100}% fill";
-            //tblValue.Text = $"You set {tempVar}% fill on pwm and Value={sSlider.Value} newValue={e.NewValue}";
-            //servo.Fill = Convert.ToDouble(e.NewValue / 100);
-            //tblValue.Text = $"You set {e.NewValue / 100} fill on pwm";
+            tblValue.Text = $"You set {servo.Fill}% fill";
         }
     }
 }
