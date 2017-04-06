@@ -42,6 +42,15 @@ namespace PwmServoTest
             servo.Set(Convert.ToDouble(e.NewValue), PwmServo.PwmInputType.ServoFill);
             tblValue.Text = $"You set {servo.Fill}% fill";
         }
+
+        private void btnPwmEnable_Click(object sender, RoutedEventArgs e)
+        {
+            servo.State = !servo.State;
+            //if (servo.State) servo.State = false;
+            //else servo.State = true;
+            btnPwmEnable.Content = Convert.ToString($"pwm is {servo.State}");
+
+        }
     }
 }
 

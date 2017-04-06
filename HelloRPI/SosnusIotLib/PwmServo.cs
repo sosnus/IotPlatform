@@ -31,6 +31,7 @@ namespace SosnusIotLib
             angleMax = 120; //typically 120 or 150
 
             await SetupBasic(_pinNumber, Frequency);
+
         }
 
 

@@ -27,6 +27,7 @@ namespace SosnusIotLib
         }
 
         private double fill = 0; //range between <0-100>
+
         /// <summary>
         /// Fill get and set between 0.0 to 100.0 (mean 0% to 100%)
         /// </summary>
@@ -43,6 +44,11 @@ namespace SosnusIotLib
             }
         }
 
+        /// <summary>
+        /// Simple method to convert frequency to perioid (T=1/f) and convert seconds to miliseconds
+        /// </summary>
+        /// <param name="_frequency"></param>
+        /// <returns></returns>
         public double FrequencyToMiliseconds(double _frequency)
         {
             return 1000.0 / _frequency; //return miliseconds, for f=50, return 20 (ms)
@@ -67,8 +73,7 @@ namespace SosnusIotLib
             _pwmController.SetDesiredFrequency(frequency);
 
             _pwmPin = _pwmController.OpenPin(_pinNumber);
-            State = true; //small change
-            //_pwmPin.Start();
+            State = true;
         }
 
         /// <summary>
@@ -82,6 +87,9 @@ namespace SosnusIotLib
 
         private bool state = true;
 
+        /// <summary>
+        /// Change bool state (for info) and enable/disable pwm pin
+        /// </summary>
         public bool State
         {
             get
