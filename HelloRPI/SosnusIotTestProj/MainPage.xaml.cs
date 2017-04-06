@@ -25,10 +25,14 @@ namespace SosnusIotTestProj
         public MainPage()
         {
             this.InitializeComponent();
-            spMainStack.Children.Add(new Info());
-            spMainStack.Children.Add(new LedGreenAndYellow());
-            spMainStack.Children.Add(new LedRedPwm());
-            spMainStack.Children.Add(new ServoPwm());
+            spMainStack1.Children.Add(new Info());
+            spMainStack1.Children.Add(new ServoPage());
+            spMainStack1.Children.Add(new LedGreenAndYellow());
+            spMainStack1.Children.Add(new LedRedPwm());
         }
+
+
+
+
     }
 }

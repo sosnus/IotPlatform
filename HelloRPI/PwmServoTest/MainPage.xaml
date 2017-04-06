@@ -9,6 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+            <TextBlock Text="Servo"/>
             <Button Name="btnPwmEnable" Click="btnPwmEnable_Click" HorizontalAlignment="Center"  Content="void"/>
             <TextBlock Name="tblValue" Text="void"/>
             <Slider Name="sSlider" ValueChanged="sSlider_ValueChanged"/>

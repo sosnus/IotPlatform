@@ -10,6 +10,20 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
             <TextBlock Text="Info about app"/>
+            <TextBlock Text="JUNGLE WEB 2017"/>
+            <TextBlock Text="SKN SKaNeR"/>
+            <TextBlock Text="follow us: "/>
+            <TextBlock Text="   @SKaNeR_TUL"/>
+               <TextBlock Text="   @p_lodz_pl"/>
+            <TextBlock Text=" "/>
+
+            <TextBlock Text="Project opensource:"/>
+            <TextBlock Text="github.com/sosnus/SosnusIotPlatform" FontSize="10"/>
+
+            <TextBlock Text="Project: SosnusIotPlatform"/>
+            <TextBlock Text="Created by @StaPulawski"/>
+            <TextBlock Text="               Stanislaw Pulawski"/>
+
         </StackPanel>
     </Grid>
 </Page>

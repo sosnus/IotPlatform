@@ -8,11 +8,15 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel Name="spMainStack" Orientation="Horizontal">
-            
+        <StackPanel>
+            <StackPanel Name="spMainStack1" Orientation="Horizontal"/>
+            <StackPanel Name="spMainStack2" Orientation="Horizontal"/>
             
         </StackPanel>
-        
+
+
+
+
         <!--<Grid Name="mainGrid">
             --><!--<Grid.RowDefinitions>
                 <RowDefinition Height="*" />
