@@ -13,7 +13,7 @@ namespace SosnusIotLib
         private PwmPin _pwmPin;
         private PwmController _pwmController;
 
-        private double frequency = 100; //init value
+        private double frequency = 100;
         public double Frequency
         {
             get
@@ -22,13 +22,11 @@ namespace SosnusIotLib
             }
             set
             {
-                //value must be between 
                 frequency = value;
             }
         }
 
-        private double fill = 0; //init value between <0-100>
-        //between 0.0-100.0
+        private double fill = 0; //range between <0-100>
         /// <summary>
         /// Fill get and set between 0.0 to 100.0 (mean 0% to 100%)
         /// </summary>
@@ -36,21 +34,18 @@ namespace SosnusIotLib
         {
             get
             {
-                return fill*100.0; //between 0.0-100.0
+                return fill*100.0; //get <0.0-100.0>
             }
             set
             {
-                //value must be between 
                 fill = (value/100);
-                _pwmPin.SetActiveDutyCyclePercentage(fill); //between <0-1>
-
+                _pwmPin.SetActiveDutyCyclePercentage(fill); //set <0-1>
             }
         }
 
         public double FrequencyToMiliseconds(double _frequency)
         {
-            //1.0 / _frequency; //now seconds
-            return 1000.0 / _frequency; //now ms, for f=50, maybe return 20 (ms)
+            return 1000.0 / _frequency; //return miliseconds, for f=50, return 20 (ms)
         }
 
         /// <summary>
@@ -72,7 +67,8 @@ namespace SosnusIotLib
             _pwmController.SetDesiredFrequency(frequency);
 
             _pwmPin = _pwmController.OpenPin(_pinNumber);
-            _pwmPin.Start();
+            State = true; //small change
+            //_pwmPin.Start();
         }
 
         /// <summary>
@@ -84,16 +80,27 @@ namespace SosnusIotLib
             Fill = _fill;
         }
 
+        private bool state = true;
 
-
-        public void Stop()
+        public bool State
         {
-            _pwmPin.Stop();
-        }
-
-        public void Start()
-        {
-            _pwmPin.Start();
+            get
+            {
+                return state;
+            }
+            set
+            {
+                if(value == true)
+                {
+                    _pwmPin.Start();
+                    state = true;
+                }
+                else
+                {
+                    _pwmPin.Stop();
+                    state = false;
+                }
+            }
         }
     }
 }

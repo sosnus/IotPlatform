@@ -39,9 +39,7 @@ namespace PwmServoTest
 
         private void sSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
         {
-            double tempVar = Convert.ToDouble(e.NewValue);
-            while (tempVar > 100.0) tempVar /= 10.0;
-            servo.Set(tempVar, PwmServo.PwmInputType.ServoFill);
+            servo.Set(Convert.ToDouble(e.NewValue), PwmServo.PwmInputType.ServoFill);
             tblValue.Text = $"You set {servo.Fill}% fill";
         }
     }

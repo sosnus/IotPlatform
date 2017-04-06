@@ -39,7 +39,7 @@ namespace SosnusIotLib
         {
             ServoAngle,
             ServoFill,
-            PwmFill ///Ahtung!
+            PwmFill //Ahtung!
         }
 
             private double fillTemp;
@@ -50,21 +50,17 @@ namespace SosnusIotLib
             switch (type)
             {
                 case PwmInputType.ServoAngle:
-                    {
+                    { //now Var can have between <0-120(150?)> but this isn't tested
                         fillTemp = (variable * fillDelta)/angleMax ;
                         fillTemp += fillMin;
-                        fillTemp *= Frequency;
-                     //   fillTemp *= 100;
-                        // fillTemp = fillTemp / (1 / Frequency);
+                        fillTemp = (fillTemp * angleMax) / FrequencyToMiliseconds(Frequency); //change to Percent of fill (between 1.5% to 11.5%
                     }
                     break;
                 case PwmInputType.ServoFill:
                     {
-                        fillTemp = (variable * fillDelta) / 100;
-                        fillTemp += fillMin; //now we have how many ms must be filling
-                        fillTemp = (fillTemp*100)/ FrequencyToMiliseconds(Frequency);
-                        // FreqToMs give 20?
-                       // fillTemp *= 100;
+                        fillTemp = (variable * fillDelta) / 100; //fillTemp - how many ms i need add to fillMin?
+                        fillTemp += fillMin; //fillTemp - was in ms, now add fillMin [ms]
+                        fillTemp = (fillTemp*100)/ FrequencyToMiliseconds(Frequency); //change to Percent of fill (between 1.5% to 11.5%
                     }
                     break;
                 case PwmInputType.PwmFill:
