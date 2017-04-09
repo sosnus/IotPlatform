@@ -92,6 +92,7 @@ namespace SosnusIotLib.Pwm
         /// <param name="_fill">must be between 0.0 to 100.0</param>
         public void Set(double _fill)
         {
+            //TODO: Maybe deletethis metod?
             Fill = _fill;
         }
 
@@ -120,6 +121,6 @@ namespace SosnusIotLib.Pwm
                     state = false;
                 }
             }
-        }
+        } //end of State
     }
 }
