@@ -9,7 +9,7 @@
     <entity-names>
       <counter>
         <item-type type-id="class" type="UmlClass" />
-        <value>12</value>
+        <value>13</value>
       </counter>
       <counter>
         <item-type type-id="package" type="UmlPackage" />
@@ -19,11 +19,11 @@
     <entity-ids>
       <counter>
         <item-type type-id="" type="AbstractElementGroup" />
-        <value>27</value>
+        <value>30</value>
       </counter>
       <counter>
         <item-type type-id="class" type="UmlClass" />
-        <value>13</value>
+        <value>14</value>
       </counter>
       <counter>
         <item-type type-id="uml-provided-interface-connector" type="UmlProvidedInterfaceConnector" />
@@ -35,7 +35,7 @@
       </counter>
       <counter>
         <item-type type-id="generalization" type="UmlGeneralization" />
-        <value>5</value>
+        <value>7</value>
       </counter>
       <counter>
         <item-type type-id="package" type="UmlPackage" />
@@ -67,7 +67,7 @@
       </counter>
       <counter>
         <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
-        <value>13</value>
+        <value>16</value>
       </counter>
     </fields>
   </counters>
@@ -142,7 +142,7 @@
           <sub-models />
         </model>
       </sub-models>
-      <diagram type="uml-class" id="p2f901912f3804e20870e6ff255ea46d7_712544535" name="SosnusIotLib" order-index="1" expanded="true" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="128,119" zoom="0.7">
+      <diagram type="uml-class" id="p2f901912f3804e20870e6ff255ea46d7_712544535" name="SosnusIotLib" order-index="1" expanded="true" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="52,0" zoom="0.5999999">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -154,7 +154,7 @@
           </authors>
           <description />
           <creation-date>04/09/2017 16:55:17</creation-date>
-          <change-date>04/09/2017 17:13:21</change-date>
+          <change-date>04/10/2017 00:40:32</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -239,6 +239,21 @@
                 <style class="default" />
               </attribute>
             </attributes>
+            <operations>
+              <operation id="oa77d7ece300743dea25694802716014a358" cid="ELEM014" name="Go\Run" type="" type-id="" visibility="public">
+                <style class="default" />
+                <parameters>
+                  <parameter id="p8c609bd20f7d48e7a3dd5345961d8b1f" name="_SpeedL" type="Real" type-id="Uml.Real" direction="In" />
+                  <parameter id="p9f9e927873e34de09555a2db42eda9b9" name="_SpeedR" type="Real" type-id="Uml.Real" direction="In" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="of473f45a4ad3448e91c97a56de3c2ceb94" cid="ELEM015" name="Stop" type="" type-id="" visibility="public">
+                <style class="default" />
+              </operation>
+            </operations>
             <source-codes>
               <source-code language="ActionScript" />
             </source-codes>
@@ -260,10 +275,19 @@
           <item id="di234803512137432444" cid="C011" type="class" name="GPIO" style-class="" owner="di289240401385114906" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:13:11">
             <style class="default" />
           </item>
+          <item id="di274466210964892128" cid="C013" type="class" name="Wheels" style-class="" owner="di666596257171973997" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/10/2017 00:39:51">
+            <style class="default" />
+          </item>
+          <item id="di666579441784591858" cid="GNR005" type="generalization" name="" style-class="" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/10/2017 00:39:51" from="di524601373233407544" to="di668559788211881202">
+            <style class="default" />
+          </item>
+          <item id="di668559788211881202" cid="GNR006" type="generalization" name="" style-class="" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/10/2017 00:40:32" from="di962511903299828560" to="di274466210964892128">
+            <style class="default" />
+          </item>
         </abstract-items>
         <layer name="Default" visible="true" enabled="true" locked="false">
           <item id="di289240401385114906" iid="d45848c1a1724e898f13db7412976670" creation-date="04/09/2017 16:57:10" order-index="0" type="entity">
-            <layout ax="88" ay="28" awidth="1477" aheight="928" x="88" y="28" width="1477" height="928" />
+            <layout ax="88" ay="-1" awidth="1477" aheight="957" x="88" y="-1" width="1477" height="957" />
           </item>
           <item id="di382388850655510166" iid="fa8d6f35453f4b21ba93d8687ef8cc7d" container="di289240401385114906" container-iid="d45848c1a1724e898f13db7412976670" creation-date="04/09/2017 16:58:22" order-index="1" type="entity">
             <layout ax="88" ay="82" awidth="680" aheight="844" x="88" y="82" width="680" height="844" />
@@ -312,23 +336,45 @@
             <relation from="di640567480658307892" from-iid="bce883d465024bc09af3dbc5fcebf41c" to="di248994043142011524" to-iid="ee5e64d71d7247b29be835fc989201f9" />
           </item>
           <item id="di666596257171973997" iid="9efc1a00c6054bceb488e6ae4e1d5d74" container="di289240401385114906" container-iid="d45848c1a1724e898f13db7412976670" creation-date="04/09/2017 17:02:53" order-index="9" type="entity">
-            <layout ax="780" ay="116" awidth="740" aheight="701" x="780" y="116" width="740" height="701" />
+            <layout ax="780" ay="-1" awidth="740" aheight="818" x="780" y="-1" width="740" height="818" />
           </item>
           <item id="di601627273910646828" iid="365877296f1540e68e4c4a8e91c2b33b" container="di666596257171973997" container-iid="9efc1a00c6054bceb488e6ae4e1d5d74" creation-date="04/09/2017 17:03:58" order-index="10" type="entity">
-            <layout ax="829" ay="449" awidth="140" aheight="258" x="829" y="449" width="140" height="258" />
+            <layout ax="841" ay="533" awidth="140" aheight="258" x="841" y="533" width="140" height="258" />
             <class />
           </item>
           <item id="di524601373233407544" iid="c74df0c184b04dfbba4166e751a10c96" container="di666596257171973997" container-iid="9efc1a00c6054bceb488e6ae4e1d5d74" creation-date="04/09/2017 17:04:36" order-index="11" type="entity">
-            <layout ax="809" ay="176" awidth="293" aheight="160" x="809" y="176" width="293" height="160" />
+            <layout ax="814" ay="328" awidth="331" aheight="160" x="814" y="328" width="331" height="160" />
             <class />
           </item>
           <item id="di962511903299828560" iid="29fe9a7afec9456885e76e1a5115f81d" container="di666596257171973997" container-iid="9efc1a00c6054bceb488e6ae4e1d5d74" creation-date="04/09/2017 17:09:53" order-index="12" type="entity">
-            <layout ax="1166" ay="176" awidth="242" aheight="160" x="1166" y="176" width="242" height="160" />
+            <layout ax="1188" ay="339" awidth="242" aheight="160" x="1188" y="339" width="242" height="160" />
             <class />
           </item>
           <item id="di234803512137432444" iid="e6a7ba8cac504fd59f7102dcb4375831" container="di289240401385114906" container-iid="d45848c1a1724e898f13db7412976670" creation-date="04/09/2017 17:13:11" order-index="13" type="entity">
             <layout ax="854" ay="846" awidth="218" aheight="80" x="854" y="846" width="218" height="80" />
             <class />
+          </item>
+          <item id="di274466210964892128" iid="a47405ec11fd4332971745b7782a445f" container="di666596257171973997" container-iid="9efc1a00c6054bceb488e6ae4e1d5d74" creation-date="04/10/2017 00:39:51" order-index="14" type="entity">
+            <layout ax="1072" ay="36" awidth="140" aheight="160" x="1072" y="36" width="140" height="160" />
+            <class />
+          </item>
+          <item id="di666579441784591858" iid="7766b16f1e6f4f99acf50e198a3e0864" creation-date="04/10/2017 00:39:51" order-index="15" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1043" y1="328" x2="1145" y2="198" start-border-pos="0.172852853273697" end-border-pos="0.984293207990589" name-position="0,0">
+              <points>
+                <point x="1043" y="328" />
+                <point x="1145" y="198" />
+              </points>
+            </layout>
+            <relation from="di524601373233407544" from-iid="c74df0c184b04dfbba4166e751a10c96" to="di668559788211881202" to-iid="1a0853b701ec420aaf34cff6664b89b9" />
+          </item>
+          <item id="di668559788211881202" iid="1a0853b701ec420aaf34cff6664b89b9" creation-date="04/10/2017 00:40:32" order-index="16" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1309" y1="339" x2="1142" y2="196" start-border-pos="0.125" end-border-pos="0.625" name-position="0,0">
+              <points>
+                <point x="1309" y="339" />
+                <point x="1142" y="196" />
+              </points>
+            </layout>
+            <relation from="di962511903299828560" from-iid="29fe9a7afec9456885e76e1a5115f81d" to="di274466210964892128" to-iid="a47405ec11fd4332971745b7782a445f" />
           </item>
         </layer>
       </diagram>
