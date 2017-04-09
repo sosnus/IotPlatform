@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="10.65" multi-file="no">
+  <meta>
+    <name>SosnusIotLib</name>
+    <authors> </authors>
+    <description />
+  </meta>
+  <counters models="2">
+    <entity-names>
+      <counter>
+        <item-type type-id="class" type="UmlClass" />
+        <value>12</value>
+      </counter>
+      <counter>
+        <item-type type-id="package" type="UmlPackage" />
+        <value>4</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="" type="AbstractElementGroup" />
+        <value>27</value>
+      </counter>
+      <counter>
+        <item-type type-id="class" type="UmlClass" />
+        <value>13</value>
+      </counter>
+      <counter>
+        <item-type type-id="uml-provided-interface-connector" type="UmlProvidedInterfaceConnector" />
+        <value>26</value>
+      </counter>
+      <counter>
+        <item-type type-id="uml-interface" type="UmlInterface" />
+        <value>26</value>
+      </counter>
+      <counter>
+        <item-type type-id="generalization" type="UmlGeneralization" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="package" type="UmlPackage" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="" type="UniversalConnector" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="containment" type="UmlContainment" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="dependency" type="UmlDependency" />
+        <value>2</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>2</value>
+      </counter>
+    </diagrams>
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.AttributeField</type>
+        <value>14</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
+        <value>13</value>
+      </counter>
+    </fields>
+  </counters>
+  <alias-groups />
+  <management>
+    <persons>
+      <person id="Paa73c54bcdb34c1596c68d3da7243277">
+        <first-name />
+        <last-name />
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <tasks />
+    <requirements />
+    <issues />
+    <to-dos />
+  </management>
+  <glossary />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <type id="Class:di640567480658307892" tid="" name="PwmServo360" description="" class-ref="di640567480658307892" />
+      <type id="Class:di234803512137432444" tid="" name="GPIO" description="" class-ref="di234803512137432444" />
+      <type id="Class:di715737165708464586" tid="" name="PwmBasic" description="" class-ref="di715737165708464586" />
+      <type id="Class:di601627273910646828" tid="" name="HBridgeDriver" description="" class-ref="di601627273910646828" />
+    </custom-types>
+  </types>
+  <filters />
+  <macros />
+  <items>
+    <item id="di532216337443159835" cid="IFC014" type="uml-interface" name="" style-class="" visibility="package" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 16:55:41">
+      <style class="default" />
+      <interface />
+    </item>
+    <item id="di957722502353304043" cid="IFC022" type="uml-interface" name="" style-class="" visibility="package" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 16:56:56">
+      <style class="default" />
+      <interface />
+    </item>
+  </items>
+  <models>
+    <model id="pb83e43d894fd4c63828ddfde23016c0b_463224790" name="Model 1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>04/09/2017 16:53:59</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models>
+        <model id="p0e10035b20ac4fa9b5d5766de1c2909c_930805206" name="Model 2" namespace="" order-index="2">
+          <meta>
+            <authors>
+              <author> </author>
+            </authors>
+            <description />
+            <creation-date>04/09/2017 16:58:04</creation-date>
+            <change-date>01/01/0001 00:00:00</change-date>
+            <revision-count>0</revision-count>
+            <version />
+          </meta>
+          <abstract-items />
+          <sub-models />
+        </model>
+      </sub-models>
+      <diagram type="uml-class" id="p2f901912f3804e20870e6ff255ea46d7_712544535" name="SosnusIotLib" order-index="1" expanded="true" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="128,119" zoom="0.7">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>04/09/2017 16:55:17</creation-date>
+          <change-date>04/09/2017 17:13:21</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="di164380669747835927" cid="ELEM014" type="uml-provided-interface-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 16:55:41" to="di532216337443159835">
+            <style class="default" />
+          </item>
+          <item id="di345936282814117735" cid="ELEM022" type="uml-provided-interface-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 16:56:56" from="di532216337443159835" to="di957722502353304043">
+            <style class="default" />
+          </item>
+          <item id="di289240401385114906" cid="PKG001" type="package" name="namespace: SosnusIotLib" style-class="" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 16:57:10">
+            <style class="default" />
+          </item>
+          <item id="di227608120848573337" cid="PKG002" type="package" name="Package2" style-class="" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 16:57:30">
+            <style class="default" />
+          </item>
+          <item id="di382388850655510166" cid="PKG003" type="package" name="SosnusIotLib.Pwm" style-class="" owner="di289240401385114906" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 16:58:22">
+            <style class="default" />
+          </item>
+          <item id="di715737165708464586" cid="C003" type="class" name="PwmBasic" style-class="" owner="di382388850655510166" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 16:59:12">
+            <style class="default" />
+          </item>
+          <item id="di248994043142011524" cid="C004" type="class" name="PwmServo" style-class="" owner="di382388850655510166" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:01:02">
+            <style class="default" />
+          </item>
+          <item id="di571918567767239617" cid="GNR002" type="generalization" name="" style-class="" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:01:02" from="di248994043142011524" to="di715737165708464586">
+            <style class="default" />
+          </item>
+          <item id="di229741631950754711" cid="C005" type="class" name="PwmBuzz" style-class="" owner="di382388850655510166" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:01:31">
+            <style class="default" />
+          </item>
+          <item id="di793812490215613014" cid="GNR003" type="generalization" name="" style-class="" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:01:31" from="di229741631950754711" to="di715737165708464586">
+            <style class="default" />
+          </item>
+          <item id="di640567480658307892" cid="C006" type="class" name="PwmServo360" style-class="" owner="di382388850655510166" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:02:17">
+            <style class="default" />
+          </item>
+          <item id="di562234267495667324" cid="GNR004" type="generalization" name="" style-class="" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:02:17" from="di640567480658307892" to="di248994043142011524">
+            <style class="default" />
+          </item>
+          <item id="di666596257171973997" cid="PKG004" type="package" name="SosnusIotLib.Motors" style-class="" owner="di289240401385114906" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:02:53">
+            <style class="default" />
+          </item>
+          <item id="di601627273910646828" cid="C007" type="class" name="HBridgeDriver" style-class="" owner="di666596257171973997" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:03:58">
+            <style class="default" />
+            <attributes>
+              <attribute id="ad74e1a7304814208987c89642d5e913d384" cid="ELEM004" name="_InA" type="GPIO" type-id="Class:di234803512137432444" visibility="private">
+                <style class="default" />
+              </attribute>
+              <attribute id="a6bad67935a0042a2a4ef1dd831be6cb6896" cid="ELEM005" name="_InB" type="GPIO" type-id="Class:di234803512137432444" visibility="private">
+                <style class="default" />
+              </attribute>
+              <attribute id="a28f8bbbf224f4cba8d5d6608ac3fe7e0449" cid="ELEM006" name="_pwm" type="PwmBasic" type-id="Class:di715737165708464586" visibility="private">
+                <style class="default" />
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="o69942678c8fc419f8aed9c4d898e080338" cid="ELEM009" name="Forward" type="" type-id="" visibility="public">
+                <style class="default" />
+              </operation>
+              <operation id="o07e4dd7b2eec44069ba6fac9dd5925c2833" cid="ELEM010" name="Back" type="" type-id="" visibility="public">
+                <style class="default" />
+              </operation>
+              <operation id="o9ec3e896cfa74611bcaa3f3d8edbf4c3401" cid="ELEM011" name="Stop" type="" type-id="" visibility="public">
+                <style class="default" />
+              </operation>
+              <operation id="o77f6bda056274f818bb6dbff0c0db5e2602" cid="ELEM012" name="Neutral" type="" type-id="" visibility="public">
+                <style class="default" />
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="di524601373233407544" cid="C008" type="class" name="WheelsDC" style-class="" owner="di666596257171973997" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:04:36">
+            <style class="default" />
+            <attributes>
+              <attribute id="a82f93dcff3fa453aa7c01dc542ddc63d39" cid="ELEM007" name="_MotorL" type="HBridgeDriver" type-id="Class:di601627273910646828" visibility="private">
+                <style class="default" />
+              </attribute>
+              <attribute id="aeee2ef77644f47148c325397daa98708631" cid="ELEM008" name="_MotorR" type="HBridgeDriver" type-id="Class:di601627273910646828" visibility="private">
+                <style class="default" />
+              </attribute>
+            </attributes>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="di962511903299828560" cid="C010" type="class" name="WheelsServos" style-class="" owner="di666596257171973997" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:09:53">
+            <style class="default" />
+            <attributes>
+              <attribute id="a8c5e2b46dddf453096e7e09ac6274d30497" cid="ELEM002" name="_MotorL" type="PwmServo360" type-id="Class:di640567480658307892" visibility="private">
+                <style class="default" />
+              </attribute>
+              <attribute id="adef848fb847b4cb58770771dd12733f9233" cid="ELEM003" name="_MotorR" type="PwmServo360" type-id="Class:di640567480658307892" visibility="private">
+                <style class="default" />
+              </attribute>
+            </attributes>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="di234803512137432444" cid="C011" type="class" name="GPIO" style-class="" owner="di289240401385114906" visibility="package" change-tracking-state="added" creator="Paa73c54bcdb34c1596c68d3da7243277" creation-date="04/09/2017 17:13:11">
+            <style class="default" />
+          </item>
+        </abstract-items>
+        <layer name="Default" visible="true" enabled="true" locked="false">
+          <item id="di289240401385114906" iid="d45848c1a1724e898f13db7412976670" creation-date="04/09/2017 16:57:10" order-index="0" type="entity">
+            <layout ax="88" ay="28" awidth="1477" aheight="928" x="88" y="28" width="1477" height="928" />
+          </item>
+          <item id="di382388850655510166" iid="fa8d6f35453f4b21ba93d8687ef8cc7d" container="di289240401385114906" container-iid="d45848c1a1724e898f13db7412976670" creation-date="04/09/2017 16:58:22" order-index="1" type="entity">
+            <layout ax="88" ay="82" awidth="680" aheight="844" x="88" y="82" width="680" height="844" />
+          </item>
+          <item id="di715737165708464586" iid="2655ae9a158547f9ba4df862da9ebcae" container="di382388850655510166" container-iid="fa8d6f35453f4b21ba93d8687ef8cc7d" creation-date="04/09/2017 16:59:12" order-index="2" type="entity">
+            <layout ax="224" ay="146" awidth="188" aheight="220" x="224" y="146" width="188" height="220" />
+            <class />
+          </item>
+          <item id="di248994043142011524" iid="ee5e64d71d7247b29be835fc989201f9" container="di382388850655510166" container-iid="fa8d6f35453f4b21ba93d8687ef8cc7d" creation-date="04/09/2017 17:01:02" order-index="3" type="entity">
+            <layout ax="144" ay="466" awidth="140" aheight="160" x="144" y="466" width="140" height="160" />
+            <class />
+          </item>
+          <item id="di571918567767239617" iid="95bfb1376dd84e8aa5f79956664b4da7" creation-date="04/09/2017 17:01:02" order-index="4" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="243" y1="466" x2="279" y2="366" start-border-pos="0.176231520516532" end-border-pos="0.677457809448242" name-position="0,0">
+              <points>
+                <point x="243" y="466" />
+                <point x="279" y="366" />
+              </points>
+            </layout>
+            <relation from="di248994043142011524" from-iid="ee5e64d71d7247b29be835fc989201f9" to="di715737165708464586" to-iid="2655ae9a158547f9ba4df862da9ebcae" />
+          </item>
+          <item id="di229741631950754711" iid="70b635d0d1a649e5856e0c083e2bb1f8" container="di382388850655510166" container-iid="fa8d6f35453f4b21ba93d8687ef8cc7d" creation-date="04/09/2017 17:01:31" order-index="5" type="entity">
+            <layout ax="444" ay="466" awidth="140" aheight="160" x="444" y="466" width="140" height="160" />
+            <class />
+          </item>
+          <item id="di793812490215613014" iid="d16ff0aba42e4b1b8104d943435476aa" creation-date="04/09/2017 17:01:31" order-index="6" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="460" y1="466" x2="392" y2="366" start-border-pos="0.0284482683454241" end-border-pos="0.526137209953146" name-position="0,0">
+              <points>
+                <point x="460" y="466" />
+                <point x="392" y="366" />
+              </points>
+            </layout>
+            <relation from="di229741631950754711" from-iid="70b635d0d1a649e5856e0c083e2bb1f8" to="di715737165708464586" to-iid="2655ae9a158547f9ba4df862da9ebcae" />
+          </item>
+          <item id="di640567480658307892" iid="bce883d465024bc09af3dbc5fcebf41c" container="di382388850655510166" container-iid="fa8d6f35453f4b21ba93d8687ef8cc7d" creation-date="04/09/2017 17:02:17" order-index="7" type="entity">
+            <layout ax="144" ay="732.2827" awidth="140" aheight="160" x="144" y="732.2827" width="140" height="160" />
+            <class />
+          </item>
+          <item id="di562234267495667324" iid="6aba04b1558c41b08ce96761ea734e39" creation-date="04/09/2017 17:02:17" order-index="8" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="214" y1="732" x2="214" y2="626" start-border-pos="0.125" end-border-pos="0.625" name-position="0,0">
+              <points>
+                <point x="214" y="732" />
+                <point x="214" y="626" />
+              </points>
+            </layout>
+            <relation from="di640567480658307892" from-iid="bce883d465024bc09af3dbc5fcebf41c" to="di248994043142011524" to-iid="ee5e64d71d7247b29be835fc989201f9" />
+          </item>
+          <item id="di666596257171973997" iid="9efc1a00c6054bceb488e6ae4e1d5d74" container="di289240401385114906" container-iid="d45848c1a1724e898f13db7412976670" creation-date="04/09/2017 17:02:53" order-index="9" type="entity">
+            <layout ax="780" ay="116" awidth="740" aheight="701" x="780" y="116" width="740" height="701" />
+          </item>
+          <item id="di601627273910646828" iid="365877296f1540e68e4c4a8e91c2b33b" container="di666596257171973997" container-iid="9efc1a00c6054bceb488e6ae4e1d5d74" creation-date="04/09/2017 17:03:58" order-index="10" type="entity">
+            <layout ax="829" ay="449" awidth="140" aheight="258" x="829" y="449" width="140" height="258" />
+            <class />
+          </item>
+          <item id="di524601373233407544" iid="c74df0c184b04dfbba4166e751a10c96" container="di666596257171973997" container-iid="9efc1a00c6054bceb488e6ae4e1d5d74" creation-date="04/09/2017 17:04:36" order-index="11" type="entity">
+            <layout ax="809" ay="176" awidth="293" aheight="160" x="809" y="176" width="293" height="160" />
+            <class />
+          </item>
+          <item id="di962511903299828560" iid="29fe9a7afec9456885e76e1a5115f81d" container="di666596257171973997" container-iid="9efc1a00c6054bceb488e6ae4e1d5d74" creation-date="04/09/2017 17:09:53" order-index="12" type="entity">
+            <layout ax="1166" ay="176" awidth="242" aheight="160" x="1166" y="176" width="242" height="160" />
+            <class />
+          </item>
+          <item id="di234803512137432444" iid="e6a7ba8cac504fd59f7102dcb4375831" container="di289240401385114906" container-iid="d45848c1a1724e898f13db7412976670" creation-date="04/09/2017 17:13:11" order-index="13" type="entity">
+            <layout ax="854" ay="846" awidth="218" aheight="80" x="854" y="846" width="218" height="80" />
+            <class />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+  <documents />
+  <document-templates />
+</sim-project>
