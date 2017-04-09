@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SosnusIotLib
+namespace SosnusIotLib.Pwm
 {
     public class PwmServo : PwmBasic
     {

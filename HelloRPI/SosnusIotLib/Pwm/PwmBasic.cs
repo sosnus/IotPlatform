@@ -6,7 +6,7 @@ using Microsoft.IoT.DeviceCore.Pwm;
 using Microsoft.IoT.Devices.Pwm;
 using System.Threading.Tasks;
 
-namespace SosnusIotLib
+namespace SosnusIotLib.Pwm
 {
     public class PwmBasic
     {
