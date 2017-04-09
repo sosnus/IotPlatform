@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputInterrupt", "InputInte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SosnusIotLib", "SosnusIotLib\SosnusIotLib.csproj", "{2A4764C5-10DD-42D6-A9B7-289272F3A819}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SosnusIotTestProj", "SosnusIotTestProj\SosnusIotTestProj.csproj", "{C6B98B92-15A1-439F-8F71-2F4427BF0B07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "SosnusIotTestProj\TestProject.csproj", "{C6B98B92-15A1-439F-8F71-2F4427BF0B07}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwmServoTest", "PwmServoTest\PwmServoTest.csproj", "{F0A77DBF-31F2-4629-AACB-1360BF779676}"
 EndProject

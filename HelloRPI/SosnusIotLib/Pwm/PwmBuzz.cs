@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace SosnusIotLib.Pwm
 {
-    class Buzz : PwmBasic
+    class PwmBuzz : PwmBasic
     {
-        //  PwmServo buzz = new PwmServo();
-        Buzz buzz = new Buzz();
-        public Buzz() { }
+        //Deklaracja listy tasków dla tego obiektu-pwmBuzz
+
+
+        public PwmBuzz() { }
 
         public async void SetupBuzz(int _pinNumber)
         {
@@ -26,10 +27,12 @@ namespace SosnusIotLib.Pwm
         /// <param name="frequency">frequency of this signal (in Hz)</param>
         public void Tone(double time, double frequency)
         {
+            //add to queue this functions:
             //pwm enable
             //set frequency
             //set timer
-            //add pwm.stop to queue
+            //wait (or sleep?)
+            //pwm disable
         }
 
     }
