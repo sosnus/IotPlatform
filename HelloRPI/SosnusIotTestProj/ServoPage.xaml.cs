@@ -36,7 +36,7 @@ namespace SosnusIotTestProj
 
         private void InitGPIO()
         {
-       //     servo.SetupServo(22);
+            servo.SetupServo(22);
         }
 
         private void sSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)

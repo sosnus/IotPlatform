@@ -14,6 +14,9 @@ namespace SosnusIotLib
         private PwmController _pwmController;
 
         private double frequency = 100;
+        /// <summary>
+        /// Get or Set frequency of pwm (in Hz)
+        /// </summary>
         public double Frequency
         {
             get
@@ -29,7 +32,8 @@ namespace SosnusIotLib
         private double fill = 0; //range between <0-100>
 
         /// <summary>
-        /// Fill get and set between 0.0 to 100.0 (mean 0% to 100%)
+        /// Get or Set fill of pwm
+        /// Range between 0.0 to 100.0 (mean 0% to 100%)
         /// </summary>
         public double Fill
         {
@@ -47,8 +51,8 @@ namespace SosnusIotLib
         /// <summary>
         /// Simple method to convert frequency to perioid (T=1/f) and convert seconds to miliseconds
         /// </summary>
-        /// <param name="_frequency"></param>
-        /// <returns></returns>
+        /// <param name="_frequency">frequency (in Hz)</param>
+        /// <returns>miliseconds for one cycle</returns>
         public double FrequencyToMiliseconds(double _frequency)
         {
             return 1000.0 / _frequency; //return miliseconds, for f=50, return 20 (ms)
@@ -59,6 +63,12 @@ namespace SosnusIotLib
         /// </summary>
         public PwmBasic() { }
 
+        /// <summary>
+        /// Initialize of pwm (it must be used after constructor PwmBasic() )
+        /// </summary>
+        /// <param name="_pinNumber">Pin of RPi where this pwm must be work</param>
+        /// <param name="_frequency">Frequency of pwm (can change this param later)</param>
+        /// <returns></returns>
         public async 
         Task SetupBasic(int _pinNumber, double _frequency)
         {
@@ -88,7 +98,8 @@ namespace SosnusIotLib
         private bool state = true;
 
         /// <summary>
-        /// Change bool state (for info) and enable/disable pwm pin
+        /// Get state of pwm (is working or not)
+        /// Set state of pwm (for enable/disable pwm
         /// </summary>
         public bool State
         {

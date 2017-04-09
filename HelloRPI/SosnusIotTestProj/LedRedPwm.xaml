@@ -10,6 +10,10 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
             <TextBlock Text="Red Led Pwm"/>
+            <Button Name="btnPwmEnable" Click="btnPwmEnable_Click" HorizontalAlignment="Center"  Content="void" />
+            <TextBlock Name="tblValue" Text="void"/>
+            <Slider Name="sSlider" ValueChanged="sSlider_ValueChanged" Width="180"/>
+            <TextBlock Name="tblValue2"/>
         </StackPanel>
     </Grid>
 </Page>
