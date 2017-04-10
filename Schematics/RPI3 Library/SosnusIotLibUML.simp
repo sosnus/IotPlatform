@@ -19,7 +19,7 @@
     <entity-ids>
       <counter>
         <item-type type-id="" type="AbstractElementGroup" />
-        <value>30</value>
+        <value>35</value>
       </counter>
       <counter>
         <item-type type-id="class" type="UmlClass" />
@@ -67,7 +67,7 @@
       </counter>
       <counter>
         <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
-        <value>16</value>
+        <value>18</value>
       </counter>
     </fields>
   </counters>
@@ -142,7 +142,7 @@
           <sub-models />
         </model>
       </sub-models>
-      <diagram type="uml-class" id="p2f901912f3804e20870e6ff255ea46d7_712544535" name="SosnusIotLib" order-index="1" expanded="true" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="52,0" zoom="0.5999999">
+      <diagram type="uml-class" id="p2f901912f3804e20870e6ff255ea46d7_712544535" name="SosnusIotLib" order-index="1" expanded="true" show-id="false" show-name="true" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="52,-62" zoom="0.5999999">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -268,6 +268,14 @@
                 <style class="default" />
               </attribute>
             </attributes>
+            <operations>
+              <operation id="o7f945948a3fc498e9245cb0417c3a8ad736" cid="ELEM016" name="Go/Run" type="" type-id="" visibility="public">
+                <style class="default" />
+              </operation>
+              <operation id="ob3a3e5c095ff4a3d94a9a966a06b6f0d497" cid="ELEM017" name="Stop" type="" type-id="" visibility="public">
+                <style class="default" />
+              </operation>
+            </operations>
             <source-codes>
               <source-code language="ActionScript" />
             </source-codes>
