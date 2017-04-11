@@ -11,11 +11,11 @@ namespace SosnusIotLib.Pwm
         //frequency and width are in PwmBasic
 
 
-        private double fillMin; // = 0.3; // typically 0.3ms //mean 1,5% of fill
-        private double fillMax; // = 0.3; // typically 2.3ms //mean 11,5% of fill
+        private double fillMin; // typically 0.3ms //mean 1,5% of fill
+        private double fillMax; // typically 2.3ms //mean 11,5% of fill
         private double fillDelta;     // set in constructor
 
-        double angleMax; // = 120; //typically 120 or 150
+        double angleMax; //typically 120 or 150
 
 
         public PwmServo() { }
