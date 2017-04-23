@@ -25,20 +25,8 @@ namespace SosnusIotLib.Pwm
             }
             set
             {
-                /*
-            Task SetupBasic(int _pinNumber, double _frequency)
-        {
-            var gpioController = GpioController.GetDefault();
-            var pwmManager = new PwmProviderManager();
-            pwmManager.Providers.Add(new SoftPwm());
-
-            var pwmControllers = await pwmManager.GetControllersAsync();
-
-            _pwmController = pwmControllers[0];
-            Frequency = _frequency;
-                 */
-            //    SetupFrequency(value);
-               _pwmController.SetDesiredFrequency(Convert.ToDouble(value));
+                //eventually check: if(value>=40 && value<=1000)
+                _pwmController.SetDesiredFrequency(value);
                 frequency = value;
             }
         }
@@ -100,21 +88,15 @@ namespace SosnusIotLib.Pwm
             State = true;
         }
 
-        public void SetupFrequency(double _frequency)
-        {
-
-            Frequency = _frequency;
-        }
-
         /// <summary>
         /// Set fill of PWM
         /// </summary>
         /// <param name="_fill">must be between 0.0 to 100.0</param>
-        public void Set(double _fill)
-        {
-            //TODO: Maybe deletethis metod?
-            Fill = _fill;
-        }
+        //public void Set(double _fill)
+        //{
+        //    //TODO: Maybe deletethis metod?
+        //    Fill = _fill;
+        //}
 
         private bool state = true;
 
