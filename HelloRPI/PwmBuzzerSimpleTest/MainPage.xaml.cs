@@ -42,9 +42,19 @@ namespace PwmBuzzerSimpleTest
 
 
 
-        private void SetParam_Button_Click(object sender, RoutedEventArgs e)
+        private async void SetParam_Button_Click(object sender, RoutedEventArgs e)
         {
-            Buzzer.Frequency = sFrequency.Value*1000;
+            if (Buzzer.Frequency == 41)
+            {
+            await Buzzer.SetupBasic(27, 100);
+                Buzzer.Frequency = 410;
+            }
+            else
+            {
+
+                await Buzzer.SetupBasic(27, 500);
+                Buzzer.Frequency = 41;
+            }
             tblFrequency.Text = $"{Buzzer.Frequency.ToString()} Hz";
         }
 

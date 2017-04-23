@@ -25,7 +25,20 @@ namespace SosnusIotLib.Pwm
             }
             set
             {
-                _pwmController.SetDesiredFrequency(value);
+                /*
+            Task SetupBasic(int _pinNumber, double _frequency)
+        {
+            var gpioController = GpioController.GetDefault();
+            var pwmManager = new PwmProviderManager();
+            pwmManager.Providers.Add(new SoftPwm());
+
+            var pwmControllers = await pwmManager.GetControllersAsync();
+
+            _pwmController = pwmControllers[0];
+            Frequency = _frequency;
+                 */
+            //    SetupFrequency(value);
+               _pwmController.SetDesiredFrequency(Convert.ToDouble(value));
                 frequency = value;
             }
         }
@@ -81,10 +94,16 @@ namespace SosnusIotLib.Pwm
 
             _pwmController = pwmControllers[0];
             Frequency = _frequency;
-            //_pwmController.SetDesiredFrequency(frequency);
+            _pwmController.SetDesiredFrequency(frequency);
 
             _pwmPin = _pwmController.OpenPin(_pinNumber);
             State = true;
+        }
+
+        public void SetupFrequency(double _frequency)
+        {
+
+            Frequency = _frequency;
         }
 
         /// <summary>
