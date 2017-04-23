@@ -40,7 +40,7 @@ namespace SosnusIotTestProj
 
         private void sSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
         {
-            ledRed.Set(Convert.ToDouble(e.NewValue));
+            ledRed.Fill = (Convert.ToDouble(e.NewValue));
             tblValue.Text = $"You set {ledRed.Fill}% fill";
         }
 
