@@ -8,6 +8,24 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Text="Project: PwmBuzzerSimpleTest" FontSize="48"/>
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
+                <TextBlock Text="Fill           :" VerticalAlignment="Center" FontSize="24"/>
+                <Slider Name="sFill" Width="500" Margin="20"/>
+                <TextBlock Name="tblFill" Text="0%" FontSize="24" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
+                <TextBlock Text="Frequency:" VerticalAlignment="Center" FontSize="24"/>
+                <Slider Name="sFrequency" Width="500" Margin="20"/>
+                <TextBlock Name="tblFrequency" Text="0Hz" FontSize="24" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <Button Content="Enable/DisablePWM" Click="EnablePwm_Button_Click"/>
+                <TextBlock Name="tblPwmState" Text="Pwm is..."/>
+                <TextBlock Text=".                        ."/>
+            <Button Content="Set parameters" Click="SetParam_Button_Click"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
