@@ -25,6 +25,7 @@ namespace SosnusIotLib.Pwm
             }
             set
             {
+                _pwmController.SetDesiredFrequency(value);
                 frequency = value;
             }
         }
@@ -80,7 +81,7 @@ namespace SosnusIotLib.Pwm
 
             _pwmController = pwmControllers[0];
             Frequency = _frequency;
-            _pwmController.SetDesiredFrequency(frequency);
+            //_pwmController.SetDesiredFrequency(frequency);
 
             _pwmPin = _pwmController.OpenPin(_pinNumber);
             State = true;
@@ -110,7 +111,7 @@ namespace SosnusIotLib.Pwm
             }
             set
             {
-                if(value == true)
+                if(value)// == true)
                 {
                     _pwmPin.Start();
                     state = true;
