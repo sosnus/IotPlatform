@@ -8,6 +8,15 @@ Projects in solution:
 * HelloRPI //first simple project for testing connection between RPI and Visual Studio
 * Blink //first project related with gpio as output
 * InputBasic //first project related with gpio as input
-* PWM // simple application pwm in practise
+* PwmBasicTest // simple application pwm in practise
+* InputInterrupt // One GPIO set as Input and interrupt
+* PwmBuzzerSimpleTest // Test for buzzer, simple using
+* PwmBuzzerLibTest // Control buzzer by class from library
+* PwmServoTest // Servo test
+* -SosnusIotLib // LIBRARY
+* TestProject // Project for testing some functrionality from SosnusIotLib
+* InputKeyboardMouse // Simple implementation inputs
+
+
 
 first simple project for testing connection between RPI and Visual Studio
