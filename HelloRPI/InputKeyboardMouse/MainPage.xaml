@@ -10,8 +10,8 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Name="GridMain" >
         <StackPanel Orientation="Horizontal">
             <StackPanel Width="400">
-                <TextBlock  Text="Keyboard"/>
-                <StackPanel Name="spKey" VerticalAlignment="Bottom"/>
+                <TextBlock  Text="Keyboard" HorizontalAlignment="Center"  />
+                <StackPanel Name="spKey" VerticalAlignment="Bottom" />
 
             </StackPanel>
             

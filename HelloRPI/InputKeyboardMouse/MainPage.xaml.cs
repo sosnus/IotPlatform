@@ -52,6 +52,17 @@ namespace InputKeyboardMouse
             });
         }
 
+        Brush SpecialKeyDetector(VirtualKey myKey)
+        {
+            SolidColorBrush brush;
+            
+            if (myKey.ToString().Length == 1)
+                brush = new SolidColorBrush(Colors.Black);
+            else
+                brush = new SolidColorBrush(Colors.Red);
+            return brush;
+        }
+
 
         private void AcceleratorKeyActivated(CoreDispatcher sender, AcceleratorKeyEventArgs args)
         {
@@ -59,7 +70,9 @@ namespace InputKeyboardMouse
             {
                 spKey.Children.Add(new TextBlock() {
                     //FontFamily = new FontFamily("Lucida Console"),
-                    Text= Convert.ToString($"Pressed {args.VirtualKey} at "+ DateTime.Now.ToString("h:mm:ss fffffff") )
+                    Foreground = SpecialKeyDetector(args.VirtualKey),
+                    Text = Convert.ToString($"Pressed {args.VirtualKey} at "+ DateTime.Now.ToString("h:mm:ss fffffff") )
+
                 });
             }
         }
