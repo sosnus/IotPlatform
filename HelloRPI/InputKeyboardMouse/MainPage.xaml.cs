@@ -31,7 +31,27 @@ namespace InputKeyboardMouse
         {
             this.InitializeComponent();
             Window.Current.CoreWindow.Dispatcher.AcceleratorKeyActivated += AcceleratorKeyActivated;
+            GridMain.PointerMoved += new PointerEventHandler(Pointer_Moved);
+
         }
+
+
+
+        void Pointer_Moved(object sender, PointerRoutedEventArgs e)
+        {
+            // Retrieve the point associated with the current event
+            Windows.UI.Input.PointerPoint currentPoint = e.GetCurrentPoint(GridMain);
+            spMouse.Children.Add(new TextBlock()
+            {
+                Text = Convert.ToString($"Pressed {currentPoint.Position.X} at " + DateTime.Now.ToString("h:mm:ss fffffff"))
+            });
+
+            spMouse.Children.Add(new TextBlock()
+            {
+                Text = Convert.ToString($"Pressed {currentPoint.Position.Y} at " + DateTime.Now.ToString("h:mm:ss fffffff"))
+            });
+        }
+
 
         private void AcceleratorKeyActivated(CoreDispatcher sender, AcceleratorKeyEventArgs args)
         {
