@@ -57,7 +57,7 @@ namespace InputKeyboardMouse
             SolidColorBrush brush;
             
             if (myKey.ToString().Length == 1)
-                brush = new SolidColorBrush(Colors.Black);
+                brush = new SolidColorBrush(Colors.LimeGreen);
             else
                 brush = new SolidColorBrush(Colors.Red);
             return brush;
