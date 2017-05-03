@@ -39,17 +39,17 @@ namespace InputKeyboardMouse
 
         void Pointer_Moved(object sender, PointerRoutedEventArgs e)
         {
+            int roundCnt = 0;
             // Retrieve the point associated with the current event
             Windows.UI.Input.PointerPoint currentPoint = e.GetCurrentPoint(GridMain);
-            spMouse.Children.Add(new TextBlock()
-            {
-                Text = Convert.ToString($"Pressed {currentPoint.Position.X} at " + DateTime.Now.ToString("h:mm:ss fffffff"))
-            });
+            spMouse.Children.Insert(0, (new TextBlock() {
+                Text = Convert.ToString($"Cursor on X={Math.Round(currentPoint.Position.X, roundCnt)} Y={Math.Round(currentPoint.Position.Y, roundCnt)} at " + DateTime.Now.ToString("h:mm:ss fffffff"))
+            }));
 
-            spMouse.Children.Add(new TextBlock()
-            {
-                Text = Convert.ToString($"Pressed {currentPoint.Position.Y} at " + DateTime.Now.ToString("h:mm:ss fffffff"))
-            });
+            //spMouse.Children.Add(new TextBlock()
+            //{
+            //    Text = Convert.ToString($"Pressed {currentPoint.Position.Y} at " + DateTime.Now.ToString("h:mm:ss fffffff"))
+            //});
         }
 
         Brush SpecialKeyDetector(VirtualKey myKey)
@@ -68,12 +68,14 @@ namespace InputKeyboardMouse
         {
             if (args.EventType.ToString().Contains("Down"))
             {
-                spKey.Children.Add(new TextBlock() {
+                spKeyboard.Children.Insert(0, (new TextBlock() {
+                //spKey.Items.Add(new TextBlock() {
+                    //spKey.Children.Add(new TextBlock() {
                     //FontFamily = new FontFamily("Lucida Console"),
                     Foreground = SpecialKeyDetector(args.VirtualKey),
                     Text = Convert.ToString($"Pressed {args.VirtualKey} at "+ DateTime.Now.ToString("h:mm:ss fffffff") )
 
-                });
+                }));
             }
         }
     }
