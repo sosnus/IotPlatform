@@ -63,9 +63,6 @@ namespace InputKeyboardMouse
 
             spScroll.Children.Insert(1, (new TextBlock()
             {
-                //spKey.Items.Add(new TextBlock() {
-                //spKey.Children.Add(new TextBlock() {
-                //FontFamily = new FontFamily("Lucida Console"),
                 Foreground = new SolidColorBrush(Colors.Yellow),
                 Text = Convert.ToString($"Scroll={ScrollCnt}+{pointerProperties.MouseWheelDelta/120}={ScrollCnt+ pointerProperties.MouseWheelDelta / 120} at " + DateTime.Now.ToString("h:mm:ss fffffff"))
             }));

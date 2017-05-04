@@ -9,16 +9,6 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Name="GridMain" >
         <StackPanel Orientation="Horizontal">
-            <!--<StackPanel Width="400">
-                <TextBlock  Text="Keyboard" HorizontalAlignment="Center"/>
-                <ScrollViewer Height="460" VerticalAlignment="Bottom">
-                    
-                <ListView  Name="spKey" VerticalAlignment="Bottom"/>
-                </ScrollViewer>
-                --><!--<StackPanel Name="spKey" VerticalAlignment="Bottom" />--><!--
-
-            </StackPanel>-->
-
             <StackPanel Width="300">
                 <TextBlock  Text="Mouse" HorizontalAlignment="Center"/>
                 <StackPanel Name="spMouse" VerticalAlignment="Bottom"/>
