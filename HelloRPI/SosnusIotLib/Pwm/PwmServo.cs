@@ -34,9 +34,7 @@ namespace SosnusIotLib.Pwm
 
         }
 
-
-
-        public enum PwmInputType
+        public enum ServoPwmInputType
         {
             ServoAngle,
             ServoFill,
@@ -45,33 +43,34 @@ namespace SosnusIotLib.Pwm
 
             private double fillTemp;
 
-        public void Set(double variable, PwmInputType type)
+        public void Set(double variable, ServoPwmInputType type)
         {
             fillTemp = 0; //na wszelki wypadek
             switch (type)
             {
-                case PwmInputType.ServoAngle:
+                case ServoPwmInputType.ServoAngle:
                     { //now Var can have between <0-120(150?)> but this isn't tested
                         fillTemp = (variable * fillDelta)/angleMax ;
                         fillTemp += fillMin;
-                        fillTemp = (fillTemp * angleMax) / FrequencyToMiliseconds(Frequency); //change to Percent of fill (between 1.5% to 11.5%
+                        fillTemp = (fillTemp * angleMax) / FrequencyToMiliseconds(Frequency); //change to Percent of fill (between 1.5% to 11.5%)
                     }
                     break;
-                case PwmInputType.ServoFill:
+                case ServoPwmInputType.ServoFill:
                     {
                         fillTemp = (variable * fillDelta) / 100; //fillTemp - how many ms i need add to fillMin?
                         fillTemp += fillMin; //fillTemp - was in ms, now add fillMin [ms]
-                        fillTemp = (fillTemp*100)/ FrequencyToMiliseconds(Frequency); //change to Percent of fill (between 1.5% to 11.5%
+                        fillTemp = (fillTemp*100)/ FrequencyToMiliseconds(Frequency); //change to Percent of fill (between 1.5% to 11.5%)
                     }
                     break;
-                case PwmInputType.PwmFill:
+                case ServoPwmInputType.PwmFill:
                     {
-                        fillTemp = variable;
+                        fillTemp = variable; // simple % (between 1.5% to 11.5%)
                     }
                     break;
             }
             //btween 0.3 to 2.3ms if not used PwmFill
-            Set(fillTemp);
+            Fill = fillTemp * 100;
+            //Set(fillTemp);
             
         }
 

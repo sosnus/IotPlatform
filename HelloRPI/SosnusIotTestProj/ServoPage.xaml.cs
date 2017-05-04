@@ -41,7 +41,7 @@ namespace SosnusIotTestProj
 
         private void sSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
         {
-            servo.Set(Convert.ToDouble(e.NewValue), PwmServo.PwmInputType.ServoFill);
+            servo.Set(Convert.ToDouble(e.NewValue), PwmServo.ServoPwmInputType.ServoFill);
             tblValue.Text = $"You set {servo.Fill}% fill";
         }
 
