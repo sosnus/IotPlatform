@@ -45,6 +45,7 @@ namespace SosnusIotLib.Pwm
             }
             set
             {
+                //if (value > 100) throw Exception; //TODO
                 fill = (value/100);
                 _pwmPin.SetActiveDutyCyclePercentage(fill); //set <0-1>
             }
