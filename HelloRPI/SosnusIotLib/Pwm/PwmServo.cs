@@ -26,11 +26,10 @@ namespace SosnusIotLib.Pwm
             fillMax = 2.3; // typically 2.3
             fillDelta = fillMax - fillMin;
 
-            Frequency = 50; //most of servos have 50Hz, 20ms
-
             angleMax = 120; //typically 120 or 150
 
-            await SetupBasic(_pinNumber, Frequency);
+            // Frequency = 50; //most of servos have 50Hz, 20ms
+            await SetupBasic(_pinNumber, 50); // Frequency); I cannot use Frequency before SetupBasic method
 
         }
 
@@ -69,7 +68,7 @@ namespace SosnusIotLib.Pwm
                     break;
             }
             //btween 0.3 to 2.3ms if not used PwmFill
-            Fill = fillTemp * 100;
+            Fill = fillTemp; // * 100; between 1.5 to 11.5 (mean 5)
             //Set(fillTemp);
             
         }
