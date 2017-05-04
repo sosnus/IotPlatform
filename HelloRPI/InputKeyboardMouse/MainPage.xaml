@@ -31,7 +31,12 @@
 
                 <StackPanel Width="200">
                 <TextBlock  Text="Scroll" HorizontalAlignment="Center"/>
-                <StackPanel Name="spScroll" VerticalAlignment="Bottom"/>
+                <StackPanel Name="spScroll" VerticalAlignment="Bottom">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnScrollCntReset" Content="Reset" Click="btnScrollCntReset_Click"/>
+                        <TextBlock Name="scrollTbl" Text=" ScrollCnt=0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Grid>
