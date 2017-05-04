@@ -7,7 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Name="GridMain" >
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="300">
+                <TextBlock  Text="Mouse" HorizontalAlignment="Center"/>
+                <StackPanel Name="spMouse" VerticalAlignment="Bottom"/>
+            </StackPanel>
 
+            <StackPanel Width="300">
+                <TextBlock  Text="Keyboard" HorizontalAlignment="Center"/>
+                <StackPanel Name="spKeyboard" VerticalAlignment="Bottom"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
