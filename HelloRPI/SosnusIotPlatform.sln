@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SosnusIotLib", "SosnusIotLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "SosnusIotTestProj\TestProject.csproj", "{C6B98B92-15A1-439F-8F71-2F4427BF0B07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwmServoTest", "PwmServoTest\PwmServoTest.csproj", "{F0A77DBF-31F2-4629-AACB-1360BF779676}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwmServoSimpleLibTest", "PwmServoTest\PwmServoSimpleLibTest.csproj", "{F0A77DBF-31F2-4629-AACB-1360BF779676}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwmBuzzerSimpleTest", "PwmBuzzerSimpleTest\PwmBuzzerSimpleTest.csproj", "{E9605540-2141-488E-96C3-246F0FC9A287}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputKeyboardMouse", "InputKeyboardMouse\InputKeyboardMouse.csproj", "{F59EB929-090E-4330-878F-D845E66480C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputKeyboardMouseBasic", "InputKeyboardMouseBasic\InputKeyboardMouseBasic.csproj", "{4F92F666-46F2-4AEA-9ABA-FDA0541E94AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SosnusPlatform", "SosnusPlatform\SosnusPlatform.csproj", "{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -275,6 +277,26 @@ Global
 		{4F92F666-46F2-4AEA-9ABA-FDA0541E94AD}.Release|x86.ActiveCfg = Release|x86
 		{4F92F666-46F2-4AEA-9ABA-FDA0541E94AD}.Release|x86.Build.0 = Release|x86
 		{4F92F666-46F2-4AEA-9ABA-FDA0541E94AD}.Release|x86.Deploy.0 = Release|x86
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Debug|ARM.ActiveCfg = Debug|ARM
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Debug|ARM.Build.0 = Debug|ARM
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Debug|ARM.Deploy.0 = Debug|ARM
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Debug|x64.ActiveCfg = Debug|x64
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Debug|x64.Build.0 = Debug|x64
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Debug|x64.Deploy.0 = Debug|x64
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Debug|x86.ActiveCfg = Debug|x86
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Debug|x86.Build.0 = Debug|x86
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Debug|x86.Deploy.0 = Debug|x86
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Release|Any CPU.ActiveCfg = Release|x86
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Release|ARM.ActiveCfg = Release|ARM
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Release|ARM.Build.0 = Release|ARM
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Release|ARM.Deploy.0 = Release|ARM
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Release|x64.ActiveCfg = Release|x64
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Release|x64.Build.0 = Release|x64
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Release|x64.Deploy.0 = Release|x64
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Release|x86.ActiveCfg = Release|x86
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Release|x86.Build.0 = Release|x86
+		{EFA79414-2FE1-4275-8C54-DFF9EE733AC2}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
