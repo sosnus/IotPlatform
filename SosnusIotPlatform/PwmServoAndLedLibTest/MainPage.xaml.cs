@@ -13,18 +13,44 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using SosnusIotLib.Pwm;
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace PwmServoAndLedLibTest
 {
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
     {
+    PwmBasic led = new PwmBasic();
+    //PwmServo servo = new PwmServo();
         public MainPage()
         {
             this.InitializeComponent();
+            InitGPIO(); //Initialize all input and output pins
+        }
+
+        private async void InitGPIO()
+        {
+            //servo.SetupServo(22);
+            await led.SetupBasic(6, 100);
+        }
+
+
+
+        private void sSlider_ValueChangedLed(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
+        {
+            led.Fill = (Convert.ToDouble(e.NewValue));
+            tblValueLed.Text = $"You set {led.Fill}% fill";
+        }
+
+        private void btnPwmEnable_ClickLed(object sender, RoutedEventArgs e)
+        {
+            led.State = !led.State;
+            btnPwmEnableLed.Content = Convert.ToString($"pwm is {led.State}");
         }
     }
 }

@@ -8,6 +8,13 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
 
+            <TextBlock Text="Pwm Led Test" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="36"/>
+            <Button Name="btnPwmEnableLed" Click="btnPwmEnable_ClickLed" HorizontalAlignment="Center"  Content="void"/>
+            <TextBlock Name="tblValueLed" Text="void" HorizontalAlignment="Center"/>
+            <Slider Name="sSliderLed" ValueChanged="sSlider_ValueChangedLed" Width="400" />
+
+        </StackPanel>
     </Grid>
 </Page>
