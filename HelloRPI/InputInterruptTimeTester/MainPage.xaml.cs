@@ -24,25 +24,26 @@ namespace InputInterruptTimeTester
     public sealed partial class MainPage : Page
     {
         private GpioPin tactSwitch;
-        private GpioPin led; //class with led pin
+        private GpioPin led;
+
 
         public MainPage()
         {
             this.InitializeComponent();
-            InitGPIO(); //Initialize all input and output pins
+            InitGPIO();
         }
 
         private void InitGPIO() //there we will write all procedures connected with pins initializations
         {
             var gpioSwitch = GpioController.GetDefault();
-            tactSwitch = gpioSwitch.OpenPin(22); //initialization
-            tactSwitch.SetDriveMode(GpioPinDriveMode.InputPullUp); //Set directory (input/output)
+            tactSwitch = gpioSwitch.OpenPin(22); 
+            tactSwitch.SetDriveMode(GpioPinDriveMode.InputPullUp);
             tactSwitch.ValueChanged += MySwitch_ValueChanged;
 
             var gpioLed = GpioController.GetDefault();
-            led = gpioLed.OpenPin(5); //initialization
-            led.Write(GpioPinValue.High); //set LOW state (GND, 0V) on led
-            led.SetDriveMode(GpioPinDriveMode.Output); //Set directory (input/output)
+            led = gpioLed.OpenPin(5);
+            led.Write(GpioPinValue.High); 
+            led.SetDriveMode(GpioPinDriveMode.Output);
         }
 
         private void MySwitch_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
@@ -51,28 +52,49 @@ namespace InputInterruptTimeTester
             {
                 if (args.Edge == GpioPinEdge.FallingEdge)
                 {
-                    led.Write(GpioPinValue.Low); //Set low state on led
+                    led.Write(GpioPinValue.Low); 
                 }
                 else
                 {
-                    led.Write(GpioPinValue.High); //Set low state on led
+                    led.Write(GpioPinValue.High);
                 }
             });
         }
 
 
 
+        int stateChangeCnt = 0;
+
+        //private void MySwitch_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
+        //{
+        //    var t = Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+        //    {
+        //        if (args.Edge == GpioPinEdge.FallingEdge)
+        //        {
+        //            led.Write(GpioPinValue.Low); //Set low state on led
+        //        }
+        //        else
+        //        {
+        //            led.Write(GpioPinValue.High); //Set low state on led
+        //        }
+        //    });
+
+        //}
 
 
-        //        cnt++;
 
-        //   tblInfo.Text = $"LOW_Cnt={cnt}";
-        //tblInfo.Text = $"Cnt={cnt}";
+
+        //stateChangeCnt++;
         //var watch = System.Diagnostics.Stopwatch.StartNew();
         //watch.Stop();
         //var elapsedTicks = watch.ElapsedTicks;
         //var elapsedMs = watch.ElapsedMilliseconds;
-        //    tblInfo.Text = $"HIGH_Cnt={cnt}  \n Ticks={elapsedTicks} \n Ms={elapsedMs}";
+        //tblInfo.Text = $"HIGH_Cnt={cnt}  \n Ticks={elapsedTicks} \n Ms={elapsedMs}";
+        //tblInfo.Text = $"Led state: {led.Read().ToString()} \nstateChangeCnt={stateChangeCnt} ";
+
+
+        //   tblInfo.Text = $"LOW_Cnt={cnt}";
+        //tblInfo.Text = $"Cnt={cnt}";
 
         //private void Button_Click(object sender, RoutedEventArgs e)
         //{
