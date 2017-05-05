@@ -9,7 +9,8 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Name="tblInfo" Text="InputInterruptTimeTester"/>
+            <TextBlock Text="InputInterruptTimeTester"/>
+            <TextBlock Name="tblInfo" />
         </StackPanel>
     </Grid>
 </Page>

@@ -46,6 +46,41 @@ namespace InputInterruptTimeTester
             led.SetDriveMode(GpioPinDriveMode.Output);
         }
 
+        //simple scenario
+        private void MySwitch_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
+        {
+                if (args.Edge == GpioPinEdge.FallingEdge) led.Write(GpioPinValue.Low); 
+                else                                      led.Write(GpioPinValue.High);
+        }
+
+
+        //advanced scenario
+        /*
+        int stateChangeCnt = 0;
+        private void MySwitch_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew(); //remember that Stopwatch is enabled in MySwitch_ValueChanged(), not while when GPIO RPi change state
+            stateChangeCnt++;
+            var t = Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                if (args.Edge == GpioPinEdge.FallingEdge)
+                {
+                    led.Write(GpioPinValue.Low);
+                }
+                else
+                {
+                    led.Write(GpioPinValue.High);
+                }
+                tblInfo.Text = $"Switch state: {tactSwitch.Read().ToString()}, Cnt={stateChangeCnt}";
+                watch.Stop();
+                tblInfo.Text += $"\nTicks={watch.ElapsedTicks} \nMilliseconds={watch.ElapsedMilliseconds}";
+
+            });
+        }
+        */
+
+        //simple scenario (but ready to change UI)
+        /*
         private void MySwitch_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
         {
             var t = Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -60,52 +95,6 @@ namespace InputInterruptTimeTester
                 }
             });
         }
-
-
-
-        int stateChangeCnt = 0;
-
-        //private void MySwitch_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
-        //{
-        //    var t = Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-        //    {
-        //        if (args.Edge == GpioPinEdge.FallingEdge)
-        //        {
-        //            led.Write(GpioPinValue.Low); //Set low state on led
-        //        }
-        //        else
-        //        {
-        //            led.Write(GpioPinValue.High); //Set low state on led
-        //        }
-        //    });
-
-        //}
-
-
-
-
-        //stateChangeCnt++;
-        //var watch = System.Diagnostics.Stopwatch.StartNew();
-        //watch.Stop();
-        //var elapsedTicks = watch.ElapsedTicks;
-        //var elapsedMs = watch.ElapsedMilliseconds;
-        //tblInfo.Text = $"HIGH_Cnt={cnt}  \n Ticks={elapsedTicks} \n Ms={elapsedMs}";
-        //tblInfo.Text = $"Led state: {led.Read().ToString()} \nstateChangeCnt={stateChangeCnt} ";
-
-
-        //   tblInfo.Text = $"LOW_Cnt={cnt}";
-        //tblInfo.Text = $"Cnt={cnt}";
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (mySwitch.Read() == GpioPinValue.Low)
-        //    {
-        //        tblInfo.Text = $"LOW state on pin {numer_pinu}";
-        //    }
-        //    else
-        //    {
-        //        tblInfo.Text = $"HIGH state on pin {numer_pinu}";
-        //    }
-        //}
+        */
     }
 }
