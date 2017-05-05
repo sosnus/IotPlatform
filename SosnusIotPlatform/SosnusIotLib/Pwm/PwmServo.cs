@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SosnusIotLib.Pwm
 {
-    public class PwmServo : PwmBasic
+    public class PwmServo : PwmCore
     {
         //frequency and width are in PwmBasic
 
@@ -16,7 +15,6 @@ namespace SosnusIotLib.Pwm
         private double fillDelta;     // set in constructor
 
         double angleMax; //typically 120 or 150
-
 
         public PwmServo() { }
 
@@ -29,7 +27,7 @@ namespace SosnusIotLib.Pwm
             angleMax = 120; //typically 120 or 150
 
             // Frequency = 50; //most of servos have 50Hz, 20ms
-            await SetupBasic(_pinNumber, 50); // Frequency); I cannot use Frequency before SetupBasic method
+            await SetupPwmCore(_pinNumber, 50); // Frequency); I cannot use Frequency before SetupBasic method
 
         }
 
@@ -68,7 +66,8 @@ namespace SosnusIotLib.Pwm
                     break;
             }
             //btween 0.3 to 2.3ms if not used PwmFill
-            Fill = fillTemp; // * 100; between 1.5 to 11.5 (mean 5)
+            Fill = fillTemp; 
+            // * 100; between 1.5 to 11.5 (mean 5)
             //Set(fillTemp);
             
         }

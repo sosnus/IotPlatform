@@ -23,7 +23,7 @@ namespace SosnusIotTestProj
     /// </summary>
     public sealed partial class LedRedPwm : Page
     {
-        PwmBasic ledRed = new PwmBasic();
+        PwmCore ledRed = new PwmCore();
         public LedRedPwm()
         {
             this.InitializeComponent();
@@ -35,7 +35,7 @@ namespace SosnusIotTestProj
 
         private void InitGPIO()
         {
-            ledRed.SetupBasic(13,50);
+            ledRed.SetupPwmCore(13,50);
         }
 
         private void sSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)

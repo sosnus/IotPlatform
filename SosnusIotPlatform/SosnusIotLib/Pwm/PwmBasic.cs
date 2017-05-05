@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SosnusIotLib.Pwm
 {
-    public class PwmBasic
+    public class PwmCore
     {
         private PwmPin _pwmPin;
         private PwmController _pwmController;
@@ -64,16 +64,16 @@ namespace SosnusIotLib.Pwm
         /// <summary>
         /// This constructor is void, You must configure this class by this.SetupBasic()
         /// </summary>
-        public PwmBasic() { }
+        public PwmCore() { }
 
         /// <summary>
         /// Initialize of pwm (it must be used after constructor PwmBasic() )
         /// </summary>
-        /// <param name="_pinNumber">Pin of RPi where this pwm must be work</param>
-        /// <param name="_frequency">Frequency of pwm (can change this param later)</param>
+        /// <param name="__pinNumber">Pin of RPi where this pwm must be work</param>
+        /// <param name="__frequency">Frequency of pwm (can change this param later)</param>
         /// <returns></returns>
         public async 
-        Task SetupBasic(int _pinNumber, double _frequency)
+        Task SetupPwmCore(int __pinNumber, double __frequency)
         {
             var gpioController = GpioController.GetDefault();
             var pwmManager = new PwmProviderManager();
@@ -82,22 +82,14 @@ namespace SosnusIotLib.Pwm
             var pwmControllers = await pwmManager.GetControllersAsync();
 
             _pwmController = pwmControllers[0];
-            Frequency = _frequency;
+            Frequency = __frequency;
             _pwmController.SetDesiredFrequency(frequency);
 
-            _pwmPin = _pwmController.OpenPin(_pinNumber);
+            _pwmPin = _pwmController.OpenPin(__pinNumber);
             State = true;
         }
 
-        /// <summary>
-        /// Set fill of PWM
-        /// </summary>
-        /// <param name="_fill">must be between 0.0 to 100.0</param>
-        //public void Set(double _fill)
-        //{
-        //    //TODO: Maybe deletethis metod?
-        //    Fill = _fill;
-        //}
+
 
         private bool state = true;
 
@@ -127,3 +119,14 @@ namespace SosnusIotLib.Pwm
         } //end of State
     }
 }
+
+
+/// <summary>
+/// Set fill of PWM
+/// </summary>
+/// <param name="_fill">must be between 0.0 to 100.0</param>
+//public void Set(double _fill)
+//{
+//    //TODO: Maybe deletethis metod?
+//    Fill = _fill;
+//}

@@ -33,10 +33,10 @@ namespace PwmServoAndLedLibTest
             InitGPIO(); //Initialize all input and output pins
         }
 
-        private async void InitGPIO()
+        private void InitGPIO()
         {
             //servo.SetupServo(22);
-            await led.SetupBasic(6, 100);
+            led.SetupBasic(6, 100);
         }
 
 

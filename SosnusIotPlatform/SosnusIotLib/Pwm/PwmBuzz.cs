@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SosnusIotLib.Pwm
 {
-    class PwmBuzz : PwmBasic
+    class PwmBuzz : PwmCore
     {
         private List<BuzzerEffectProperties> list = new List<BuzzerEffectProperties>();
 
