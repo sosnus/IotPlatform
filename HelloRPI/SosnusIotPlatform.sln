@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SosnusIotLib", "SosnusIotLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "SosnusIotTestProj\TestProject.csproj", "{C6B98B92-15A1-439F-8F71-2F4427BF0B07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwmServoSimpleLibTest", "PwmServoTest\PwmServoSimpleLibTest.csproj", "{F0A77DBF-31F2-4629-AACB-1360BF779676}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputKeyboardMouse", "InputKeyboardMouse\InputKeyboardMouse.csproj", "{F59EB929-090E-4330-878F-D845E66480C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputKeyboardMouseBasic", "InputKeyboardMouseBasic\InputKeyboardMouseBasic.csproj", "{4F92F666-46F2-4AEA-9ABA-FDA0541E94AD}"
@@ -24,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputInterruptTimeTester", "InputInterruptTimeTester\InputInterruptTimeTester.csproj", "{72C11FA6-7F0E-472F-A2DF-A8627B8E7C87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwmBasicTest", "PwmBasicTest\PwmBasicTest.csproj", "{7005ABEF-F866-4FE5-9427-CD4F4788D3A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PwmServoSimpleLibTest", "PwmServoSimpleLibTest\PwmServoSimpleLibTest.csproj", "{F0A77DBF-31F2-4629-AACB-1360BF779676}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,26 +153,6 @@ Global
 		{C6B98B92-15A1-439F-8F71-2F4427BF0B07}.Release|x86.ActiveCfg = Release|x86
 		{C6B98B92-15A1-439F-8F71-2F4427BF0B07}.Release|x86.Build.0 = Release|x86
 		{C6B98B92-15A1-439F-8F71-2F4427BF0B07}.Release|x86.Deploy.0 = Release|x86
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|ARM.ActiveCfg = Debug|ARM
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|ARM.Build.0 = Debug|ARM
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|ARM.Deploy.0 = Debug|ARM
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x64.ActiveCfg = Debug|x64
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x64.Build.0 = Debug|x64
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x64.Deploy.0 = Debug|x64
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x86.ActiveCfg = Debug|x86
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x86.Build.0 = Debug|x86
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x86.Deploy.0 = Debug|x86
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|Any CPU.ActiveCfg = Release|x86
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|ARM.ActiveCfg = Release|ARM
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|ARM.Build.0 = Release|ARM
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|ARM.Deploy.0 = Release|ARM
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x64.ActiveCfg = Release|x64
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x64.Build.0 = Release|x64
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x64.Deploy.0 = Release|x64
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x86.ActiveCfg = Release|x86
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x86.Build.0 = Release|x86
-		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x86.Deploy.0 = Release|x86
 		{F59EB929-090E-4330-878F-D845E66480C8}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{F59EB929-090E-4330-878F-D845E66480C8}.Debug|ARM.ActiveCfg = Debug|ARM
 		{F59EB929-090E-4330-878F-D845E66480C8}.Debug|ARM.Build.0 = Debug|ARM
@@ -253,6 +233,26 @@ Global
 		{7005ABEF-F866-4FE5-9427-CD4F4788D3A1}.Release|x86.ActiveCfg = Release|x86
 		{7005ABEF-F866-4FE5-9427-CD4F4788D3A1}.Release|x86.Build.0 = Release|x86
 		{7005ABEF-F866-4FE5-9427-CD4F4788D3A1}.Release|x86.Deploy.0 = Release|x86
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|ARM.Build.0 = Debug|ARM
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x64.ActiveCfg = Debug|x64
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x64.Build.0 = Debug|x64
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x64.Deploy.0 = Debug|x64
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x86.ActiveCfg = Debug|x86
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x86.Build.0 = Debug|x86
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Debug|x86.Deploy.0 = Debug|x86
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|Any CPU.ActiveCfg = Release|x86
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|ARM.ActiveCfg = Release|ARM
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|ARM.Build.0 = Release|ARM
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|ARM.Deploy.0 = Release|ARM
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x64.ActiveCfg = Release|x64
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x64.Build.0 = Release|x64
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x64.Deploy.0 = Release|x64
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x86.ActiveCfg = Release|x86
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x86.Build.0 = Release|x86
+		{F0A77DBF-31F2-4629-AACB-1360BF779676}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
