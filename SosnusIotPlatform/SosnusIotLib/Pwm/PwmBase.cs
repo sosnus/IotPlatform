@@ -13,7 +13,6 @@ namespace SosnusIotLib.Pwm
         public async void SetupBasic(int _pinNumber, double _frequency)
         {
             await SetupPwmCore(_pinNumber, _frequency); // Frequency); I cannot use Frequency before SetupBasic method
-
         }
 
 

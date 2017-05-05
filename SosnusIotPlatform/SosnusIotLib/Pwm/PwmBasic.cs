@@ -31,8 +31,8 @@ namespace SosnusIotLib.Pwm
             }
         }
 
-        private double fill = 0; //range between <0-100>
 
+        private double fill = 0; //range between <0-100>
         /// <summary>
         /// Get or Set fill of pwm
         /// Range between 0.0 to 100.0 (mean 0% to 100%)

@@ -10,24 +10,26 @@ namespace SosnusIotLib.Pwm
         //frequency and width are in PwmBasic
 
 
-        private double fillMin; // typically 0.3ms //mean 1,5% of fill
-        private double fillMax; // typically 2.3ms //mean 11,5% of fill
-        private double fillDelta;     // set in constructor
+        private const double fillMin=0.3; // typically 0.3ms //mean 1,5% of fill
+        private const double fillMax=2.3; // typically 2.3ms //mean 11,5% of fill
+        private const double fillDelta =fillMax - fillMin;    // set in constructor
 
-        double angleMax; //typically 120 or 150
+        private const int pwmFrequency = 50; //typically 50Hz
+
+        const double angleMax=120; //typically 120 or 150
 
         public PwmServo() { }
 
         public async void SetupServo(int _pinNumber)
         {
-            fillMin = 0.3; // typically 0.3
-            fillMax = 2.3; // typically 2.3
-            fillDelta = fillMax - fillMin;
-
-            angleMax = 120; //typically 120 or 150
-
+            //fillMin = 0.3; // typically 0.3
+            //fillMax = 2.3; // typically 2.3
+            //fillDelta = fillMax - fillMin;
+            //angleMax = 120; //typically 120 or 150
             // Frequency = 50; //most of servos have 50Hz, 20ms
-            await SetupPwmCore(_pinNumber, 50); // Frequency); I cannot use Frequency before SetupBasic method
+            // Frequency); I cannot use Frequency before SetupBasic method
+
+            await SetupPwmCore(_pinNumber, pwmFrequency); 
 
         }
 
@@ -38,11 +40,11 @@ namespace SosnusIotLib.Pwm
             PwmFill //Ahtung!
         }
 
-            private double fillTemp;
 
         public void Set(double variable, ServoPwmInputType type)
         {
-            fillTemp = 0; //na wszelki wypadek
+            double fillTemp = 0;
+
             switch (type)
             {
                 case ServoPwmInputType.ServoAngle:
