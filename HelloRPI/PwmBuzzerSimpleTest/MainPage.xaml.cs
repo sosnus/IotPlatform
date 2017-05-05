@@ -38,6 +38,7 @@ namespace PwmBuzzerSimpleTest
         private async void InitGPIO()
         {
             await Buzzer.SetupBasic(27, 100);
+
         }
 
 
