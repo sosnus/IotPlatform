@@ -9,9 +9,9 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
-            <TextBox Name="tbWidth"/>
+            <TextBox Name="tbWidth" Text="0"/>
             <Button Content="Refresh" Click="Button_Click"/>
-            <TextBlock Name="tblValue"/>
+            <TextBlock Name="tblValue" />
             <Slider Name="sSlider" ValueChanged="sSlider_ValueChanged"/>
             <TextBlock Name="tblValue2"/>
         </StackPanel>

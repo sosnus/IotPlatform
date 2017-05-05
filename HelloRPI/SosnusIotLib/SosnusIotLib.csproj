@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pwm\PwmBase.cs" />
     <Compile Include="Pwm\PwmBuzz.cs" />
     <Compile Include="Pwm\PwmBasic.cs" />
     <Compile Include="Pwm\PwmServo.cs" />
