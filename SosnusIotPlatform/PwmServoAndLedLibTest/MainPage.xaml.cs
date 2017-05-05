@@ -25,8 +25,9 @@ namespace PwmServoAndLedLibTest
     /// </summary>
     public sealed partial class MainPage : Page
     {
-    PwmBasic led = new PwmBasic();
-    //PwmServo servo = new PwmServo();
+        PwmBasic led = new PwmBasic();
+        PwmServo servo = new PwmServo();
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -35,8 +36,8 @@ namespace PwmServoAndLedLibTest
 
         private void InitGPIO()
         {
-            //servo.SetupServo(22);
             led.SetupBasic(6, 100);
+            servo.SetupServo(22);
         }
 
 
@@ -51,6 +52,19 @@ namespace PwmServoAndLedLibTest
         {
             led.State = !led.State;
             btnPwmEnableLed.Content = Convert.ToString($"pwm is {led.State}");
+        }
+
+
+        private void sSlider_ValueChangedServo(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
+        {
+            servo.Set(Convert.ToDouble(e.NewValue), PwmServo.ServoPwmInputType.ServoFill);
+            tblValueServo.Text = $"You set {servo.Fill}% fill";
+        }
+
+        private void btnPwmEnable_ClickServo(object sender, RoutedEventArgs e)
+        {
+            servo.State = !servo.State;
+            btnPwmEnableServo.Content = Convert.ToString($"pwm is {servo.State}");
         }
     }
 }

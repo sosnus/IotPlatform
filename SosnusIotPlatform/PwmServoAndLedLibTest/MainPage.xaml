@@ -15,6 +15,13 @@
             <TextBlock Name="tblValueLed" Text="void" HorizontalAlignment="Center"/>
             <Slider Name="sSliderLed" ValueChanged="sSlider_ValueChangedLed" Width="400" />
 
+
+            <TextBlock Text="Pwm Servo Test" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="36"/>
+            <Button      Name="btnPwmEnableServo"    Click="btnPwmEnable_ClickServo" HorizontalAlignment="Center"  Content="void"/>
+            <TextBlock   Name="tblValueServo" Text="void" HorizontalAlignment="Center"/>
+            <Slider      Name="sSliderServo"  ValueChanged="sSlider_ValueChangedServo" Width="400" />
+
+
         </StackPanel>
     </Grid>
 </Page>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SosnusIotLib.Pwm
+﻿namespace SosnusIotLib.Pwm
 {
     public class PwmBasic : PwmCore
     {
@@ -14,7 +8,6 @@ namespace SosnusIotLib.Pwm
         {
             await SetupPwmCore(_pinNumber, _frequency); // Frequency); I cannot use Frequency before SetupBasic method
         }
-
 
         public void Set(double variable)
         {
