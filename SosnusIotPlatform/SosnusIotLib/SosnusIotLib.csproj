@@ -112,6 +112,7 @@
     <Compile Include="Pwm\PwmBuzz.cs" />
     <Compile Include="Pwm\PwmCore.cs" />
     <Compile Include="Pwm\PwmServo.cs" />
+    <Compile Include="Pwm\PwmServo360.cs" />
     <EmbeddedResource Include="Properties\SosnusIotLib.rd.xml" />
   </ItemGroup>
   <ItemGroup>
