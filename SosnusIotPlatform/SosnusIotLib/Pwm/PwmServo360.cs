@@ -15,12 +15,12 @@
             await SetupPwmCore(_pinNumber, pwmFrequency);
         }
 
-        public void WheelStop()
+        public void Stop()
         {
             SetServo360(0);
         }
 
-        public void WheelStopForce()
+        public void StopForce()
         {
             SetServo360(0);
             State = false;
