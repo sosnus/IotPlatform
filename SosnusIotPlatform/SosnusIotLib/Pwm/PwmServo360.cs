@@ -48,7 +48,7 @@
             fillTemp = (percent * fillDelta) / 100; //fillTemp - how many ms i need add to fillMin?
             fillTemp += percent; //fillTemp - was in ms, now add fillMin [ms]
             fillTemp = (percent * 100) / 20; //change to Percent of fill (between 1.5% to 11.5%)
-
+            fillTemp /= 100;
             return fillTemp;
         }
 

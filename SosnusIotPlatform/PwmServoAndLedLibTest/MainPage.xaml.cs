@@ -43,11 +43,26 @@ namespace PwmServoAndLedLibTest
         }
 
 
-
-        private void sSlider_ValueChangedLed(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
+        
+        private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            led.Fill = (Convert.ToDouble(e.NewValue));
-            tblValueLed.Text = $"You set {led.Fill}% fill";
+            if ((sender as Slider).Name == "sSliderLed")
+            {
+                led.Fill = (Convert.ToDouble(e.NewValue));
+                tblValueLed.Text = $"You set {led.Fill}% fill";
+            }
+            else if ((sender as Slider).Name == "sSliderServo")
+            {
+                servo.Set(Convert.ToDouble(e.NewValue), PwmServo.ServoPwmInputType.ServoFill);
+                tblValueServo.Text = $"You set {servo.Fill}% fill";
+
+            }
+            else //((sender as Slider).Name == "sSliderServo360")
+            {
+                wheel.SetServo360(Convert.ToDouble(e.NewValue)*2-100);
+                tblValueServo360.Text = $"You set {wheel.Fill}% fill";
+            }
+
         }
 
         private void btnPwmEnable_ClickLed(object sender, RoutedEventArgs e)
@@ -57,11 +72,9 @@ namespace PwmServoAndLedLibTest
         }
 
 
-        private void sSlider_ValueChangedServo(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
-        {
-            servo.Set(Convert.ToDouble(e.NewValue), PwmServo.ServoPwmInputType.ServoFill);
-            tblValueServo.Text = $"You set {servo.Fill}% fill";
-        }
+        //private void sSlider_ValueChangedServo(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
+        //{
+        //}
 
         private void btnPwmEnable_ClickServo(object sender, RoutedEventArgs e)
         {
