@@ -21,6 +21,7 @@ namespace SosnusIotLib.Pwm
                 frequency = _frequency;
                 signalDuration = _signalDuration;
                 fill = 50;
+                //fill? or Fill
             }
             public double fill;
             public double frequency;
