@@ -42,16 +42,16 @@ namespace PwmServoAndLedLibTest
             wheel.SetupServo360(18);
         }
 
-
-        
         private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            if ((sender as Slider).Name == "sSliderLed")
+            string name = (sender as Slider).Name;
+
+            if (name == "sSliderLed")
             {
-                led.Fill = (Convert.ToDouble(e.NewValue));
+                led.Set(Convert.ToDouble(e.NewValue));
                 tblValueLed.Text = $"You set {led.Fill}% fill";
             }
-            else if ((sender as Slider).Name == "sSliderServo")
+            else if (name == "sSliderServo")
             {
                 servo.Set(Convert.ToDouble(e.NewValue), PwmServo.ServoPwmInputType.ServoFill);
                 tblValueServo.Text = $"You set {servo.Fill}% fill";
@@ -62,24 +62,28 @@ namespace PwmServoAndLedLibTest
                 wheel.SetServo360(Convert.ToDouble(e.NewValue)*2-100);
                 tblValueServo360.Text = $"You set {wheel.Fill}% fill";
             }
-
         }
 
-        private void btnPwmEnable_ClickLed(object sender, RoutedEventArgs e)
+        private void btnPwmState(object sender, RoutedEventArgs e)
         {
-            led.State = !led.State;
-            btnPwmEnableLed.Content = Convert.ToString($"pwm is {led.State}");
+            string name = (sender as Button).Name;
+
+            if (name == "btnPwmLed")
+            {
+                led.State ^= true;
+                btnPwmLed.Content = Convert.ToString($"pwm is {led.State}");
+            }
+            else if (name == "btnPwmServo")
+            {
+                servo.State ^= true;
+                btnPwmServo.Content = Convert.ToString($"pwm is {servo.State}");
+            }
+            else //(name == "btnPwmServo360")
+            {
+                wheel.State ^= true;
+                btnPwmServo360.Content = Convert.ToString($"pwm is {wheel.State}");
+            }
         }
 
-
-        //private void sSlider_ValueChangedServo(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
-        //{
-        //}
-
-        private void btnPwmEnable_ClickServo(object sender, RoutedEventArgs e)
-        {
-            servo.State = !servo.State;
-            btnPwmEnableServo.Content = Convert.ToString($"pwm is {servo.State}");
-        }
     }
 }

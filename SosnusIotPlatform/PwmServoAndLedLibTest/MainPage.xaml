@@ -9,23 +9,22 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <TextBlock Text="PwmServoAndLedLibTest" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="24"/>
 
-            <TextBlock Text="Pwm Led Test" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="36"/>
-            <Button Name="btnPwmEnableLed" Click="btnPwmEnable_ClickLed" HorizontalAlignment="Center"  Content="void"/>
+            <TextBlock Text="Pwm Led Test" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="24"/>
+            <Button    Name="btnPwmLed" Click="btnPwmState" HorizontalAlignment="Center"  Content="void"/>
             <TextBlock Name="tblValueLed" Text="void" HorizontalAlignment="Center"/>
-            <Slider Name="sSliderLed" ValueChanged="Slider_ValueChanged" Width="400" />
+            <Slider    Name="sSliderLed" ValueChanged="Slider_ValueChanged" Width="400" />
 
+            <TextBlock Text="Pwm Servo Test" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="24"/>
+            <Button    Name="btnPwmServo"    Click="btnPwmState" HorizontalAlignment="Center"  Content="void"/>
+            <TextBlock Name="tblValueServo" Text="void" HorizontalAlignment="Center"/>
+            <Slider    Name="sSliderServo"  ValueChanged="Slider_ValueChanged" Width="400" />
 
-            <TextBlock Text="Pwm Servo Test" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="36"/>
-            <Button      Name="btnPwmEnableServo"    Click="btnPwmEnable_ClickServo" HorizontalAlignment="Center"  Content="void"/>
-            <TextBlock   Name="tblValueServo" Text="void" HorizontalAlignment="Center"/>
-            <Slider      Name="sSliderServo"  ValueChanged="Slider_ValueChanged" Width="400" />
-
-            <TextBlock Text="Pwm Servo360 Test" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="36"/>
-            <Button      Name="btnPwmEnableServo360"    Click="btnPwmEnable_ClickServo" HorizontalAlignment="Center"  Content="void"/>
-            <TextBlock   Name="tblValueServo360" Text="void" HorizontalAlignment="Center"/>
-            <Slider      Name="sSliderServo360"  ValueChanged="Slider_ValueChanged" Width="400" />
-
+            <TextBlock Text="Pwm Servo360 Test" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="24"/>
+            <Button    Name="btnPwmServo360"    Click="btnPwmState" HorizontalAlignment="Center"  Content="void"/>
+            <TextBlock Name="tblValueServo360" Text="void" HorizontalAlignment="Center"/>
+            <Slider    Name="sSliderServo360"  ValueChanged="Slider_ValueChanged" Width="400" />
 
         </StackPanel>
     </Grid>
