@@ -27,6 +27,7 @@ namespace PwmServoAndLedLibTest
     {
         PwmBasic led = new PwmBasic();
         PwmServo servo = new PwmServo();
+        PwmServo360 wheel = new PwmServo360();
 
         public MainPage()
         {
@@ -38,6 +39,7 @@ namespace PwmServoAndLedLibTest
         {
             led.SetupBasic(6, 100);
             servo.SetupServo(22);
+            wheel.SetupServo360(18);
         }
 
 

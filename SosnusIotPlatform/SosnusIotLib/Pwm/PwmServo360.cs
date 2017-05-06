@@ -1,6 +1,6 @@
 ﻿namespace SosnusIotLib.Pwm
 {
-    class PwmServo360 : PwmCore
+    public class PwmServo360 : PwmCore
     {
         public PwmServo360() { }
 
@@ -13,6 +13,17 @@
         public async void SetupServo360(int _pinNumber)
         {
             await SetupPwmCore(_pinNumber, pwmFrequency);
+        }
+
+        public void WheelStop()
+        {
+            SetServo360(0);
+        }
+
+        public void WheelStopForce()
+        {
+            SetServo360(0);
+            State = false;
         }
 
         /// <summary>
@@ -41,15 +52,5 @@
             return fillTemp;
         }
 
-        public void WheelStop()
-        {
-            SetServo360(0);
-        }
-
-        public void WheelStopForce()
-        {
-            SetServo360(0);
-            State = false;
-        }
     }
 }
