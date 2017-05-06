@@ -39,7 +39,7 @@ namespace SosnusIotLib.Pwm
         /// <param name="__pinNumber">Pin of RPi where this pwm must be work</param>
         /// <param name="__frequency">Frequency of pwm (can change this param later)</param>
         /// <returns></returns>
-        public async Task SetupPwmCore(int __pinNumber, double __frequency)
+        protected async Task SetupPwmCore(int __pinNumber, double __frequency)
         {
             var gpioController = GpioController.GetDefault();
             var pwmManager = new PwmProviderManager();
