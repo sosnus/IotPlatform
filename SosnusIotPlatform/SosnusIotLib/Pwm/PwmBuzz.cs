@@ -9,14 +9,16 @@ namespace SosnusIotLib.Pwm
     class PwmBuzz : PwmBasic
     {
         int note = 480; // in milliseconds
-        struct parameters
-        {
-            int frequency;
-            int fill;
-            int duration;
-        }
 
-        List<parameters>[] list = new List<parameters>;
+
+        public struct parameters
+        {
+            public int frequency;
+            public int fill;
+            public int duration;
+        };
+
+        List<parameters>[] list = new List<parameters>[];
 
         void func()
         {
