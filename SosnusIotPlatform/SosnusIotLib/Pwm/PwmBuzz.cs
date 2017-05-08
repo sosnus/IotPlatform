@@ -16,11 +16,11 @@ namespace SosnusIotLib.Pwm
             public int fill;
             public int duration;
 
-            public parameters(int frequency, int fill, int duration)
+            public parameters(int _frequency, int _fill, int _duration)
             {
-                this.frequency = frequency;
-                this.fill = fill;
-                this.duration = duration;
+                this.frequency = _frequency;
+                this.fill = _fill;
+                this.duration = _duration;
             }
         };
 
