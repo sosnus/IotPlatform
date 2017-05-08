@@ -16,9 +16,17 @@ namespace SosnusIotLib.Pwm
             public int frequency;
             public int fill;
             public int duration;
-        };
 
-        List<parameters>[] list = new List<parameters>[];
+
+            public parameters(int frequency, int fill, int duration)
+            {
+                this.frequency = frequency;
+                this.fill = fill;
+                this.duration = duration;
+            }
+    };
+
+        List<parameters> list = new List<parameters>();
 
         void func()
         {
