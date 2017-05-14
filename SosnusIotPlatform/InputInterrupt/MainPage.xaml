@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Check state" Click="Button_Click"/>
+            <!--<Button Content="Check state" Click="Button_Click"/>-->
             <TextBlock Name="tblInfo" Text="void" HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
