@@ -39,7 +39,7 @@ namespace PwmServoAndLedLibTest
         {
             led.SetupBasic(6, 100);
             servo.SetupServo(22);
-            wheel.SetupServo360(18);
+            wheel.SetupServo360(23);
         }
 
         private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
