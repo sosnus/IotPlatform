@@ -20,7 +20,7 @@ namespace InputInterrupt
             var gpio = GpioController.GetDefault();
             mySwitch = gpio.OpenPin(numer_pinu); //initialization
             mySwitch.SetDriveMode(GpioPinDriveMode.InputPullUp); //Set directory (input/output)
-            mySwitch.ValueChanged += MySwitch_ValueChanged;
+            mySwitch.ValueChanged += MySwitch_ValueChanged; // Add event when pin value changed
         }
 
         private void MySwitch_ValueChanged(GpioPin sender, GpioPinValueChangedEventArgs args)
@@ -33,6 +33,8 @@ namespace InputInterrupt
                     tblInfo.Text = $"HIGH state on pin {numer_pinu}";
             });
         }
+    }
+}
 
         //private void Button_Click(object sender, RoutedEventArgs e)
         //{
@@ -45,5 +47,3 @@ namespace InputInterrupt
         //        tblInfo.Text = $"HIGH state on pin {numer_pinu}";
         //    }
         //}
-    }
-}
