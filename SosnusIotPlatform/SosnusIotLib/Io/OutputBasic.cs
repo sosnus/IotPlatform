@@ -10,45 +10,46 @@ namespace SosnusIotLib.Io
 {
     public class OutputBasic
     {
+        public OutputBasic() { }
 
-        //private const int numer_pinu = 2; //number of pin where we plug led
-        GpioPin gpioPin; //class with led pin
 
-        OutputBasic(int pinNumber, GpioPinDriveMode _mode)
+        GpioPin _gpioPin;
+
+        public void Setup(int pinNumber, GpioPinDriveMode _mode)
         {
             GpioController gpio = GpioController.GetDefault();
-            gpioPin = gpio.OpenPin(pinNumber); //initialization
-            gpioPin.Write(GpioPinValue.Low); //set LOW state (GND, 0V) on led
-            gpioPin.SetDriveMode(_mode); // GpioPinDriveMode.Output); //Set directory (input/output)
+            _gpioPin = gpio.OpenPin(pinNumber); //initialization
+            _gpioPin.Write(GpioPinValue.Low); //set LOW state (GND, 0V) on led
+            _gpioPin.SetDriveMode(_mode); // GpioPinDriveMode.Output); //Set directory (input/output)
         }
 
         private GpioPinValue state;
 
-        //State { get; Set; }
-
         public GpioPinValue State
         {
-            get { return state; }
-        set
-        {
-                gpioPin.Write(value);
+            get
+            {
+                return state;
+            }
+            set
+            {
+                _gpioPin.Write(value);
                 state = value;
+            }
         }
-    }
 
         void StateToggle()
         {
-            if(gpioPin.Read() == GpioPinValue.High)
-                gpioPin.Write(GpioPinValue.Low);
+            if (_gpioPin.Read() == GpioPinValue.High)
+                _gpioPin.Write(GpioPinValue.Low);
             else
-                gpioPin.Write(GpioPinValue.High);
+                _gpioPin.Write(GpioPinValue.High);
         }
 
-
-    //void Set(GpioPinValue state)
-    //    {
-    //        gpioPin.Write(state);
-    //    }
+        //void Set(GpioPinValue state)
+        //    {
+        //        gpioPin.Write(state);
+        //    }
 
     }
 }

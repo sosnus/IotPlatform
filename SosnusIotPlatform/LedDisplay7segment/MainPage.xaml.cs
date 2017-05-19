@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.Xaml.Controls;
+//using Windows.UI.Xaml.Controls;
 using Windows.Devices.Gpio;
 
 using SosnusIotLib.Io; //.OutputBasic;
@@ -28,18 +28,10 @@ namespace LedDisplay7segment
     {
         //private GpioPin led[5]; //class with led pin
         //private GpioPin[] led = new GpioPin[5];
-        private OutputBasic[] led = new OutputBasic[8];
+        private OutputBasic[] _segments = new OutputBasic[8];
+        int numb = 0;
 
-
-        //= {{3} };
-
-
-        public MainPage()
-        {
-            this.InitializeComponent();
-            InitGPIO();
-
-            int[,] numery = new int[12,8] { 
+        int[,] numery = new int[12, 8] { 
                 //a,b,c,d,e,f,g,h
                 { 0,0,0,0,0,0,1,1 }, // 0
                 { 1,0,0,1,1,1,1,1 }, // 1
@@ -55,27 +47,50 @@ namespace LedDisplay7segment
                 { 1,1,1,1,1,1,1,0 }  // .
             };
 
-            for (int i = 0; i < led.Length; i++)  led[i].State = (GpioPinValue)numery[2, i];
-
-            //int[,] dis7_DigitTemplates = new int[1, 1];
-            //dis7_DigitTemplates[1] = 
-
+        public MainPage()
+        {
+            this.InitializeComponent();
+            InitGPIO();
         }
 
+        enum Seg: int
+        {
+            a,
+            b,
+            c,
+            d,
+            e,
+            f,
+            g,
+            h
+        }
 
 
         //const int dis7_DigitTemplates[0] = new int { 2,2,2};
 
         private void InitGPIO() //there we will write all procedures connected with pins initializations
         {
+            for (int i = 0; i < 8; i++)
+            {
+                _segments[i] = new OutputBasic();
+            }
 
 
-            int[] dis7_segments = new int[8];
-            int[] dis7_module = new int[8];
-            var gpio = GpioController.GetDefault();
-            led[0] = gpio.OpenPin(22); //initialization
-            led[0].Write(GpioPinValue.Low); //set LOW state (GND, 0V) on led
-            led[0].SetDriveMode(GpioPinDriveMode.Output); //Set directory (input/output)
+            _segments[(int)Seg.a].Setup(26, GpioPinDriveMode.Output);
+            _segments[(int)Seg.b].Setup(19, GpioPinDriveMode.Output);
+            _segments[(int)Seg.c].Setup(13, GpioPinDriveMode.Output);
+            _segments[(int)Seg.d].Setup(06, GpioPinDriveMode.Output);
+            _segments[(int)Seg.e].Setup(05, GpioPinDriveMode.Output);
+            _segments[(int)Seg.f].Setup(21, GpioPinDriveMode.Output);
+            _segments[(int)Seg.g].Setup(20, GpioPinDriveMode.Output);
+            _segments[(int)Seg.h].Setup(16, GpioPinDriveMode.Output);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (numb == 12) numb = 0;
+            for (int i = 0; i < _segments.Length; i++) _segments[i].State = (GpioPinValue)numery[numb, i];
+            numb++;
         }
     }
 }
