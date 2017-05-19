@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Controls;
 using Windows.Devices.Gpio;
 
+using SosnusIotLib.Io; //.OutputBasic;
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace LedDisplay7segment
@@ -25,19 +27,16 @@ namespace LedDisplay7segment
     public sealed partial class MainPage : Page
     {
         //private GpioPin led[5]; //class with led pin
-        private GpioPin[] led = new GpioPin[5];
+        //private GpioPin[] led = new GpioPin[5];
+        private OutputBasic[] led = new OutputBasic[8];
 
-        
+
         //= {{3} };
 
 
         public MainPage()
         {
             this.InitializeComponent();
-            foreach (var item in led)
-            {
-
-            }
             InitGPIO();
 
             int[,] numery = new int[12,8] { 
@@ -56,7 +55,9 @@ namespace LedDisplay7segment
                 { 1,1,1,1,1,1,1,0 }  // .
             };
 
-            int[,] dis7_DigitTemplates = new int[1, 1];
+            for (int i = 0; i < led.Length; i++)  led[i].State = (GpioPinValue)numery[2, i];
+
+            //int[,] dis7_DigitTemplates = new int[1, 1];
             //dis7_DigitTemplates[1] = 
 
         }
