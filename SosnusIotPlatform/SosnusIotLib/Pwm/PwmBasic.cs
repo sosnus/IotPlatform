@@ -1,4 +1,7 @@
-﻿namespace SosnusIotLib.Pwm
+﻿using Windows.Devices.Gpio;
+
+
+namespace SosnusIotLib.Pwm
 {
     public class PwmBasic : PwmCore
     {

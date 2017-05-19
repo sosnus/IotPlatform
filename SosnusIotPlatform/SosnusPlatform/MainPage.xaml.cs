@@ -26,6 +26,7 @@ namespace SosnusPlatform
         PwmServo360 wheelLeft = new PwmServo360();
         PwmServo360 wheelRight = new PwmServo360();
 
+        int ScrollCnt;
 
 
         public MainPage()
@@ -38,6 +39,7 @@ namespace SosnusPlatform
 
         void Pointer_Wheel_Changed(object sender, PointerRoutedEventArgs e)
         {
+
             ScrollCnt += pointerProperties.MouseWheelDelta / 120;
             scrollTbl.Text = $" ScrollCnt = {ScrollCnt}";
         }
