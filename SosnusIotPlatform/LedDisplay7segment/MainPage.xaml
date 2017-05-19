@@ -9,5 +9,6 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button Content="Change digit" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+        
     </Grid>
 </Page>

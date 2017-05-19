@@ -1,19 +1,12 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-using Windows.Devices.Gpio;
-
+﻿using Windows.Devices.Gpio;
 
 namespace SosnusIotLib.Io
 {
     public class OutputBasic
     {
-        public OutputBasic() { }
-
-
         GpioPin _gpioPin;
+
+        public OutputBasic() { }
 
         public void Setup(int pinNumber, GpioPinDriveMode _mode)
         {
