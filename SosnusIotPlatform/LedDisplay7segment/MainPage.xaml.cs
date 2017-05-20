@@ -76,14 +76,14 @@ namespace LedDisplay7segment
             }
 
 
-            _segments[(int)Seg.a].Setup(26, GpioPinDriveMode.Output);
-            _segments[(int)Seg.b].Setup(19, GpioPinDriveMode.Output);
-            _segments[(int)Seg.c].Setup(13, GpioPinDriveMode.Output);
-            _segments[(int)Seg.d].Setup(06, GpioPinDriveMode.Output);
-            _segments[(int)Seg.e].Setup(05, GpioPinDriveMode.Output);
-            _segments[(int)Seg.f].Setup(21, GpioPinDriveMode.Output);
-            _segments[(int)Seg.g].Setup(20, GpioPinDriveMode.Output);
-            _segments[(int)Seg.h].Setup(16, GpioPinDriveMode.Output);
+            _segments[(int)Seg.a].Setup(20, GpioPinDriveMode.Output);
+            _segments[(int)Seg.b].Setup(16, GpioPinDriveMode.Output);
+            _segments[(int)Seg.c].Setup(21, GpioPinDriveMode.Output);
+            _segments[(int)Seg.d].Setup(05, GpioPinDriveMode.Output);
+            _segments[(int)Seg.e].Setup(06, GpioPinDriveMode.Output);
+            _segments[(int)Seg.f].Setup(13, GpioPinDriveMode.Output);
+            _segments[(int)Seg.g].Setup(19, GpioPinDriveMode.Output);
+            _segments[(int)Seg.h].Setup(26, GpioPinDriveMode.Output);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
