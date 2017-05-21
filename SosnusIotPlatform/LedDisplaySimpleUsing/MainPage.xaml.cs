@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LedDisplay7segment;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace LedDisplaySimpleUsing
@@ -22,9 +24,36 @@ namespace LedDisplaySimpleUsing
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        DigitDisplay wyswietlacz; 
         public MainPage()
         {
             this.InitializeComponent();
+            wyswietlacz = new DigitDisplay(4);
+            int[] modulesArg = new int[] {
+                04,
+                17,
+                27,
+                22
+            };
+            int[] segmenstArg = new int[] {
+                20,
+                16,
+                21,
+                05,
+                06,
+                13,
+                19,
+                26,
+            };
+            wyswietlacz.Setup(modulesArg, segmenstArg, 50);
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int liczbaTemp;
+            if(int.TryParse(tbDigitsEnter.Text,out liczbaTemp))
+            wyswietlacz.Set(liczbaTemp);
         }
     }
 }

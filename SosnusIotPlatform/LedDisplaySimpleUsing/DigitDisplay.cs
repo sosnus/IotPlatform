@@ -14,32 +14,34 @@ namespace LedDisplay7segment
 {
     public partial class DigitDisplay
     {
-        OutputBasic[] _segments;
-        OutputBasic[] _modules;
+        OutputBasic[] _segments = new OutputBasic[8];
+        OutputBasic[] _modules = new OutputBasic[4];
 
-        int[] digitsToDisplay;
+        int[] digitsToDisplay = new int[4];
+
+        //int[] digitsToDisplay;
 
         private Timer timer;
 
         int modulesQuantity;
         int activeDigit;
         ErrorMode errorMode = ErrorMode.E;
-        int refreshFrequencyInMilliseconds;
+        double refreshFrequencyInMilliseconds;
 
         public DigitDisplay(int modules)
         {
             modulesQuantity = modules;
             activeDigit = modules - 1;
 
-            OutputBasic[] _segments = new OutputBasic[8];
-            OutputBasic[] _modules = new OutputBasic[modulesQuantity];
+            //OutputBasic[] _segments = new OutputBasic[8];
+            //OutputBasic[] _modules = new OutputBasic[modulesQuantity];
 
-            int[] digitsToDisplay = new int[modulesQuantity];
+            //int[] digitsToDisplay = new int[modulesQuantity];
         }
 
-        public bool display(int number)
+        public bool Set(int number)
         {
-            if(number<(10*modulesQuantity))
+            if(number<(10*modulesQuantity)&&number>=0)
                 //zapisz
             {
                 for (int i = 0; i < digitsToDisplay.Length; i++)
@@ -51,6 +53,7 @@ namespace LedDisplay7segment
             }
             else if(number>((-10)*(modulesQuantity-1)))
             {
+                number *= (-1);
                 for (int i = 0; i < digitsToDisplay.Length-1; i++)
                 {
                     digitsToDisplay[i] = (number % 10);
@@ -61,26 +64,39 @@ namespace LedDisplay7segment
             }
             else
             {
-            return false;
-
+                for (int i = 0; i < digitsToDisplay.Length; i++)
+                {
+                    digitsToDisplay[i] = (int)Digit.DErr;
+                }
+                return false;
             }
         }
 
         public void Setup(int[] pinForModules, int[] pinForLeds, int refreshFrequencyInHz)
         {
-            for (int i = 0; i < 8; i++)
-            {
-                _segments[i] = new OutputBasic();
-                _segments[i].Setup(pinForLeds[i], GpioPinDriveMode.Output);
-            }
-            for (int i = 0; i < modulesQuantity; i++)
-            {
-                _modules[i] = new OutputBasic();
-                _modules[i].Setup(pinForModules[i], GpioPinDriveMode.Output);
-                _modules[i].State = GpioPinValue.High;
-            }
+            refreshFrequencyInMilliseconds = refreshFrequencyInHz * pinForModules.Length;
+            refreshFrequencyInMilliseconds /= 1000;
+            refreshFrequencyInMilliseconds = 1 / refreshFrequencyInMilliseconds;
 
-            timer = new Timer(timerCallback, null, refreshFrequencyInMilliseconds, Timeout.Infinite);
+
+            //_modules[0] = new OutputBasic();
+            //_modules[1] = new OutputBasic();
+            //_modules[2] = new OutputBasic();
+            //_modules[3] = new OutputBasic();
+
+
+            for (int i = 0; i < modulesQuantity; i++)      _modules[i] = new OutputBasic();
+            for (int i = 0; i < 8; i++)
+                _segments[i] = new OutputBasic();
+            for (int i = 0; i < 8; i++)
+                _segments[i].Setup(pinForLeds[i], GpioPinDriveMode.Output);
+
+            for (int i = 0; i < modulesQuantity; i++)
+                _modules[i].Setup(pinForModules[i], GpioPinDriveMode.Output);
+            for (int i = 0; i < modulesQuantity; i++)
+                _modules[i].State = GpioPinValue.High;
+
+            timer = new Timer(timerCallback, null, (int)refreshFrequencyInMilliseconds, Timeout.Infinite);
         }
 
         private /*async*/ void timerCallback(object state)
@@ -90,7 +106,7 @@ namespace LedDisplay7segment
             else activeDigit = 0;
             SetSegments(digitsToDisplay[activeDigit]);
             _modules[activeDigit].State = GpioPinValue.Low;
-            timer = new Timer(timerCallback, null, refreshFrequencyInMilliseconds, Timeout.Infinite);
+            timer = new Timer(timerCallback, null, (int)refreshFrequencyInMilliseconds, Timeout.Infinite);
         }
 
         void SetSegments(int _digitToDisplay)

@@ -8,6 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+            <TextBox Name="tbDigitsEnter"/>
+            <Button Content="Write" HorizontalAlignment="Center" Click="Button_Click"/>
+        </StackPanel>
     </Grid>
 </Page>
