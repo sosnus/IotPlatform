@@ -31,6 +31,8 @@ namespace SosnusIotLib.Io
             }
         }
 
+
+
         void StateToggle()
         {
             if (_gpioPin.Read() == GpioPinValue.High)
