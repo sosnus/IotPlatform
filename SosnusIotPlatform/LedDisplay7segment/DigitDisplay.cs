@@ -23,6 +23,7 @@ namespace LedDisplay7segment
 
         int modulesQuantity;
         int activeDigit;
+        ErrorMode errorMode = ErrorMode.E;
         int refreshFrequencyInMilliseconds;
 
         DigitDisplay(int modules)
@@ -38,7 +39,31 @@ namespace LedDisplay7segment
 
         bool display(int number)
         {
-            return true;
+            if(number<(10*modulesQuantity))
+                //zapisz
+            {
+                for (int i = 0; i < digitsToDisplay.Length; i++)
+                {
+                    digitsToDisplay[i] = (number % 10);
+                    number /= 10;
+                }
+                return true;
+            }
+            else if(number>((-10)*(modulesQuantity-1)))
+            {
+                for (int i = 0; i < digitsToDisplay.Length-1; i++)
+                {
+                    digitsToDisplay[i] = (number % 10);
+                    number /= 10;
+                }
+                digitsToDisplay[digitsToDisplay.Length - 1] = (int)Digit.Dminus;
+                return true;
+            }
+            else
+            {
+            return false;
+
+            }
         }
 
         void Setup(int[] pinForModules, int[] pinForLeds, int refreshFrequencyInHz)
@@ -78,7 +103,7 @@ namespace LedDisplay7segment
     public partial class DigitDisplay
     {
 
-        int[,] numery = new int[13, 8] { 
+        int[,] numery = new int[14, 8] { 
                 //a,b,c,d,e,f,g,h
                 { 0,0,0,0,0,0,1,1 }, // 0
                 { 1,0,0,1,1,1,1,1 }, // 1
@@ -92,7 +117,8 @@ namespace LedDisplay7segment
                 { 0,0,0,0,1,0,0,1 }, // 9
                 { 1,1,1,1,1,1,0,1 }, // -
                 { 1,1,1,1,1,1,1,0 },  // .
-                { 0,1,0,0,0,1,0,1 } // 6
+                { 0,1,0,0,0,1,0,1 }, // E
+                { 1,1,1,1,1,1,1,1 } //blank
             };
 
         enum Digit
@@ -109,7 +135,8 @@ namespace LedDisplay7segment
             D9,
             Dminus,
             Dp,
-            DErr
+            DErr,
+            Dblank
         }
 
         enum ErrorMode
