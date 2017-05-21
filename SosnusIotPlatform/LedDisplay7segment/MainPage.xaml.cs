@@ -85,6 +85,7 @@ namespace LedDisplay7segment
                 _modules[i].State = GpioPinValue.High;
 
             timer = new Timer(timerCallback, null, (int)TimeSpan.FromSeconds(timeSpanDisplay).TotalMilliseconds, Timeout.Infinite);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
