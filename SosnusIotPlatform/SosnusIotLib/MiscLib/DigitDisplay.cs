@@ -10,7 +10,7 @@ using SosnusIotLib.Io;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LedDisplay7segment
+namespace SosnusIotLib.MiscLib
 {
     public partial class DigitDisplay
     {
@@ -19,30 +19,22 @@ namespace LedDisplay7segment
 
         int[] digitsToDisplay = new int[4];
 
-        //int[] digitsToDisplay;
-
         private Timer timer;
 
         int modulesQuantity;
         int activeDigit;
         ErrorMode errorMode = ErrorMode.E;
-        double refreshFrequencyInMilliseconds;
+        public double refreshFrequencyInMilliseconds;
 
         public DigitDisplay(int modules)
         {
             modulesQuantity = modules;
             activeDigit = modules - 1;
-
-            //OutputBasic[] _segments = new OutputBasic[8];
-            //OutputBasic[] _modules = new OutputBasic[modulesQuantity];
-
-            //int[] digitsToDisplay = new int[modulesQuantity];
         }
 
         public bool Set(int number)
         {
-            if(number<(10*modulesQuantity)&&number>=0)
-                //zapisz
+            if(number<(Math.Pow(10,modulesQuantity))&&number>=0)
             {
                 for (int i = 0; i < digitsToDisplay.Length; i++)
                 {
@@ -51,7 +43,7 @@ namespace LedDisplay7segment
                 }
                 return true;
             }
-            else if(number>((-10)*(modulesQuantity-1)))
+            else if(number>((-1)*Math.Pow(10, modulesQuantity-1)) && number <= 0)
             {
                 number *= (-1);
                 for (int i = 0; i < digitsToDisplay.Length-1; i++)
@@ -85,7 +77,7 @@ namespace LedDisplay7segment
             //_modules[3] = new OutputBasic();
 
 
-            for (int i = 0; i < modulesQuantity; i++)      _modules[i] = new OutputBasic();
+            for (int i = 0; i < modulesQuantity; i++) _modules[i] = new OutputBasic();
             for (int i = 0; i < 8; i++)
                 _segments[i] = new OutputBasic();
             for (int i = 0; i < 8; i++)
@@ -133,7 +125,7 @@ namespace LedDisplay7segment
                 { 0,0,0,0,1,0,0,1 }, // 9
                 { 1,1,1,1,1,1,0,1 }, // -
                 { 1,1,1,1,1,1,1,0 },  // .
-                { 0,1,0,0,0,1,0,1 }, // E
+                { 0,0,1,0,0,1,0,0 }, // E
                 { 1,1,1,1,1,1,1,1 } //blank
             };
 
