@@ -63,17 +63,18 @@ namespace SosnusIotLib.MiscLib
             refreshFrequencyInMilliseconds /= 1000;
             refreshFrequencyInMilliseconds = 1 / refreshFrequencyInMilliseconds;
 
-            for (int i = 0; i < modulesQuantity; i++) _modules[i] = new OutputBasic();
-            for (int i = 0; i < 8; i++)
-                _segments[i] = new OutputBasic();
-            for (int i = 0; i < 8; i++)
-                _segments[i].Setup(pinForLeds[i], GpioPinDriveMode.Output);
-
             for (int i = 0; i < modulesQuantity; i++)
+            {
+                _modules[i] = new OutputBasic();
                 _modules[i].Setup(pinForModules[i], GpioPinDriveMode.Output);
-            for (int i = 0; i < modulesQuantity; i++)
                 _modules[i].State = GpioPinValue.High;
-
+            }
+            for (int i = 0; i < 8; i++)
+            {
+                _segments[i] = new OutputBasic();
+                _segments[i].Setup(pinForLeds[i], GpioPinDriveMode.Output);
+            }
+            
             timer = new Timer(timerCallback, null, (int)refreshFrequencyInMilliseconds, Timeout.Infinite);
         }
 
@@ -89,7 +90,7 @@ namespace SosnusIotLib.MiscLib
             timer = new Timer(timerCallback, null, 0, Timeout.Infinite);
         }
 
-        void SetSegments(int _digitToDisplay)
+        private void SetSegments(int _digitToDisplay)
         {
             for (int i = 0; i < 8; i++)
                 _segments[i].State = (GpioPinValue)numery[_digitToDisplay, i];
