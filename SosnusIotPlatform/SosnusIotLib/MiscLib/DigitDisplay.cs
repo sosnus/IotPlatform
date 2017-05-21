@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 using Windows.Devices.Gpio;
 using SosnusIotLib.Io;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace SosnusIotLib.MiscLib
 {
@@ -58,7 +51,7 @@ namespace SosnusIotLib.MiscLib
             {
                 for (int i = 0; i < digitsToDisplay.Length; i++)
                 {
-                    digitsToDisplay[i] = (int)Digit.DErr;
+                    digitsToDisplay[i] = (int)errorMode;
                 }
                 return false;
             }
@@ -69,13 +62,6 @@ namespace SosnusIotLib.MiscLib
             refreshFrequencyInMilliseconds = refreshFrequencyInHz * pinForModules.Length;
             refreshFrequencyInMilliseconds /= 1000;
             refreshFrequencyInMilliseconds = 1 / refreshFrequencyInMilliseconds;
-
-
-            //_modules[0] = new OutputBasic();
-            //_modules[1] = new OutputBasic();
-            //_modules[2] = new OutputBasic();
-            //_modules[3] = new OutputBasic();
-
 
             for (int i = 0; i < modulesQuantity; i++) _modules[i] = new OutputBasic();
             for (int i = 0; i < 8; i++)
@@ -98,7 +84,9 @@ namespace SosnusIotLib.MiscLib
             else activeDigit = 0;
             SetSegments(digitsToDisplay[activeDigit]);
             _modules[activeDigit].State = GpioPinValue.Low;
-            timer = new Timer(timerCallback, null, (int)refreshFrequencyInMilliseconds, Timeout.Infinite);
+            
+            //timer = new Timer(timerCallback, null, (int)refreshFrequencyInMilliseconds, Timeout.Infinite);
+            timer = new Timer(timerCallback, null, 0, Timeout.Infinite);
         }
 
         void SetSegments(int _digitToDisplay)
@@ -125,7 +113,7 @@ namespace SosnusIotLib.MiscLib
                 { 0,0,0,0,1,0,0,1 }, // 9
                 { 1,1,1,1,1,1,0,1 }, // -
                 { 1,1,1,1,1,1,1,0 },  // .
-                { 0,0,1,0,0,1,0,0 }, // E
+                { 0,1,1,0,0,0,0,0 }, // E
                 { 1,1,1,1,1,1,1,1 } //blank
             };
 

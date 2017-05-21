@@ -33,6 +33,7 @@ namespace LedDisplaySimpleUsing
             int[] modulesArg = new int[] {04, 17, 27, 22};
             int[] segmenstArg = new int[] {20, 16, 21, 05, 06, 13, 19, 26};
             wyswietlacz.Setup(modulesArg, segmenstArg, 1);
+            wyswietlacz.Set(999999);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
