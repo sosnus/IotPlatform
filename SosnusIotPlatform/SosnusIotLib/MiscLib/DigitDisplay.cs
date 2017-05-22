@@ -19,12 +19,21 @@ namespace SosnusIotLib.MiscLib
         ErrorMode errorMode = ErrorMode.E;
         public double refreshFrequencyInMilliseconds;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="modules">Declare how many display modules You have \n (example - 8888- 4 modules, 88- 2 modules)</param>
         public DigitDisplay(int modules)
         {
             modulesQuantity = modules;
             activeDigit = modules - 1;
         }
 
+        /// <summary>
+        /// Set number for 7 segment display
+        /// </summary>
+        /// <param name="number">Number to display</param>
+        /// <returns>If it isn't posible display whole number, return false</returns>
         public bool Set(int number)
         {
             if(number<(Math.Pow(10,modulesQuantity))&&number>=0)
@@ -57,7 +66,13 @@ namespace SosnusIotLib.MiscLib
             }
         }
 
-        public void Setup(int[] pinForModules, int[] pinForLeds, int refreshFrequencyInHz)
+        /// <summary>
+        /// Setup most important things
+        /// </summary>
+        /// <param name="pinForModules">Enter array with pins for modules</param>
+        /// <param name="pinForSegments">Enter array with pins for segments</param>
+        /// <param name="refreshFrequencyInHz">Enter refresh frequency (it will be multiply by modules count</param>
+        public void Setup(int[] pinForModules, int[] pinForSegments, int refreshFrequencyInHz)
         {
             refreshFrequencyInMilliseconds = refreshFrequencyInHz * pinForModules.Length;
             refreshFrequencyInMilliseconds /= 1000;
@@ -72,7 +87,7 @@ namespace SosnusIotLib.MiscLib
             for (int i = 0; i < 8; i++)
             {
                 _segments[i] = new OutputBasic();
-                _segments[i].Setup(pinForLeds[i], GpioPinDriveMode.Output);
+                _segments[i].Setup(pinForSegments[i], GpioPinDriveMode.Output);
             }
             
             timer = new Timer(timerCallback, null, (int)refreshFrequencyInMilliseconds, Timeout.Infinite);
