@@ -1,30 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 using Windows.UI;
-using System.Windows.Input;
 using Windows.UI.Core;
 using Windows.System;
-using System.Diagnostics;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace InputKeyboardMouse
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         int ScrollCnt = 0;
@@ -54,7 +38,6 @@ namespace InputKeyboardMouse
                 Text = Convert.ToString($"{temp} Mouse Button Clicked at " + DateTime.Now.ToString("h:mm:ss fffffff"))
             }));
         }
-
 
         void Pointer_Wheel_Changed(object sender, PointerRoutedEventArgs e)
         {
@@ -94,8 +77,6 @@ namespace InputKeyboardMouse
             if (args.EventType.ToString().Contains("Down"))
             {
                 spKeyboard.Children.Insert(0, (new TextBlock() {
-                //spKey.Items.Add(new TextBlock() {
-                    //spKey.Children.Add(new TextBlock() {
                     //FontFamily = new FontFamily("Lucida Console"),
                     Foreground = SpecialKeyDetector(args.VirtualKey),
                     Text = Convert.ToString($"Pressed {args.VirtualKey} at "+ DateTime.Now.ToString("h:mm:ss fffffff") )
