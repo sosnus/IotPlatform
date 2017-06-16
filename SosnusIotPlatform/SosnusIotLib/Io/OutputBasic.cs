@@ -33,7 +33,7 @@ namespace SosnusIotLib.Io
 
 
 
-        void StateToggle()
+        public void StateToggle()
         {
             if (_gpioPin.Read() == GpioPinValue.High)
                 _gpioPin.Write(GpioPinValue.Low);
